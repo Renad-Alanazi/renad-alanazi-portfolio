@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F4F3EF;color:#15171B;-webkit-font-smoothing:antialiased;font-family:'Archivo',system-ui,sans-serif}
+::selection{background:#15171B;color:#F4F3EF}
+img{display:block}
+a{color:inherit}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-thumb{background:#CFCCC2;border:3px solid #F4F3EF;border-radius:20px}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;background:#F4F3EF;">
+
+  <div data-progress="1" style="position:fixed;top:0;left:0;height:2px;width:0%;background:oklch(0.56 0.14 252);z-index:200;"></div>
+
+  <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(244,243,239,.82);border-bottom:1px solid #DEDCD3;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;">
+        <a href="Portfolio.dc.html" style="text-decoration:none;color:#62656D;">← INDEX</a>
+        <span style="color:#CDCABF;">/</span>
+        <span style="color:#15171B;font-weight:600;">TRAFFIC CONTROLLER</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:24px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;color:#62656D;text-transform:uppercase;">
+        <a data-anchor="1" href="#overview" style="text-decoration:none;">Overview</a>
+        <a data-anchor="1" href="#wiring" style="text-decoration:none;">Wiring</a>
+        <a data-anchor="1" href="#build" style="text-decoration:none;">Build</a>
+        <a data-anchor="1" href="#testing" style="text-decoration:none;">Testing</a>
+        <a href="PAD.dc.html" style="text-decoration:none;color:oklch(0.56 0.14 252);font-weight:600;">Project 01 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header data-screen-label="TRAFFIC · Hero" style="max-width:1180px;margin:0 auto;padding:70px 40px 54px;">
+    <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:30px;">Project 05 &nbsp;/&nbsp; Discrete Analog &amp; Digital Hardware</div>
+    <h1 data-reveal="1" style="font-weight:800;font-size:clamp(40px,6.6vw,78px);line-height:0.98;letter-spacing:-0.035em;margin:0 0 28px;max-width:16ch;">Discrete-Logic Traffic Signal Controller</h1>
+    <p data-reveal="1" style="max-width:660px;font-size:19px;line-height:1.6;color:#3C3F46;margin:0 0 44px;">A complete traffic-signal controller (main road, protected turn arrow, and crosswalk) built entirely from comparators, logic gates, timers, and discrete power electronics. <strong style="font-weight:600;color:#15171B;">No microcontroller, no firmware.</strong></p>
+
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;margin-bottom:52px;">
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Architecture</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">0 microcontrollers, fully discrete</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Cycle time</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">48–60 s, trimmer-adjustable</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Power</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">7.4 V Li-ion, 5 V &amp; 12 V rails</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Timing core</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">555 sawtooth + comparator bank</div>
+      </div>
+    </div>
+
+    <!-- Fig 01 — system architecture diagram -->
+    <figure data-reveal="1" style="margin:0;">
+      <div style="border:1px solid #DEDCD3;background:#fff;padding:32px 26px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:22px;">Signal flow: time base → decision → drive</div>
+        <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:12px;font-family:'IBM Plex Mono',monospace;">
+          <div style="flex:1 1 150px;min-width:150px;border:1px solid #E2E0D7;border-radius:3px;padding:15px;"><div style="font-size:10px;letter-spacing:.1em;color:#8A8D94;margin-bottom:7px;">TIME BASE</div><div style="font-size:13px;line-height:1.5;color:#15171B;">555 sawtooth<br><span style="color:#8A8D94;font-size:11.5px;">0.2–3.34 V ramp</span></div></div>
+          <div style="display:flex;align-items:center;color:oklch(0.56 0.14 252);font-size:18px;">→</div>
+          <div style="flex:1 1 150px;min-width:150px;border:1px solid #E2E0D7;border-radius:3px;padding:15px;"><div style="font-size:10px;letter-spacing:.1em;color:#8A8D94;margin-bottom:7px;">COMPARE</div><div style="font-size:13px;line-height:1.5;color:#15171B;">LM324 bank<br><span style="color:#8A8D94;font-size:11.5px;">threshold slicing</span></div></div>
+          <div style="display:flex;align-items:center;color:oklch(0.56 0.14 252);font-size:18px;">→</div>
+          <div style="flex:1 1 160px;min-width:160px;border:1.5px solid oklch(0.56 0.14 252);border-radius:3px;padding:15px;background:#fff;"><div style="font-size:10px;letter-spacing:.1em;color:oklch(0.50 0.13 252);margin-bottom:7px;">DECODE</div><div style="font-size:13px;line-height:1.5;color:#15171B;">CD4069 · CD4081<br><span style="color:#8A8D94;font-size:11.5px;">logic state machine</span></div></div>
+          <div style="display:flex;align-items:center;color:oklch(0.56 0.14 252);font-size:18px;">→</div>
+          <div style="flex:1 1 150px;min-width:150px;border:1px solid #E2E0D7;border-radius:3px;padding:15px;"><div style="font-size:10px;letter-spacing:.1em;color:#8A8D94;margin-bottom:7px;">DRIVE</div><div style="font-size:13px;line-height:1.5;color:#15171B;">LM317 · IRF510<br><span style="color:#8A8D94;font-size:11.5px;">regulated + switched</span></div></div>
+          <div style="display:flex;align-items:center;color:oklch(0.56 0.14 252);font-size:18px;">→</div>
+          <div style="flex:1 1 160px;min-width:160px;border:1px solid #E2E0D7;border-radius:3px;padding:15px;"><div style="font-size:10px;letter-spacing:.1em;color:#8A8D94;margin-bottom:7px;">SIGNAL HEADS</div><div style="display:flex;gap:5px;margin-bottom:6px;"><span style="width:11px;height:11px;border-radius:50%;background:#CF4632;"></span><span style="width:11px;height:11px;border-radius:50%;background:#E2A032;"></span><span style="width:11px;height:11px;border-radius:50%;background:#2FA35B;"></span></div><div style="font-size:11.5px;color:#8A8D94;">Main · Arrow · Crossing</div></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;">
+          <div style="flex:2 1 320px;border:1px dashed #CFCCBF;border-radius:3px;padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#62656D;">POWER &nbsp;·&nbsp; 7.4 V Li-ion → 5 V logic bus / 12 V fan rail</div>
+          <div style="flex:1 1 200px;border:1px dashed #CFCCBF;border-radius:3px;padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#62656D;">SOUND ON/OFF &nbsp;·&nbsp; clap-toggled supply gate</div>
+        </div>
+      </div>
+      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 01</span> &nbsp; System architecture: a single 555 time base drives a comparator and logic decode network that sequences the regulated, MOSFET-switched signal heads.</figcaption>
+    </figure>
+  </header>
+
+  <!-- 01 OVERVIEW -->
+  <section id="overview" data-screen-label="TRAFFIC · Overview" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">01 — Overview</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">A traffic intersection, implemented in pure hardware.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:46px;">
+        <p style="margin:0 0 18px;">Modern traffic controllers run on microcontrollers. This system reproduces the same behavior (sequenced main-road signals, a protected left-turn arrow, and a crosswalk) using only analog and digital building blocks: a 555-timer time base, an analog comparator bank, CMOS logic gates, flip-flops, and discrete LED power drivers.</p>
+        <p style="margin:0;">My work spanned the full stack: timing-circuit design, the comparator and logic network, custom LED driver boards, the multi-rail battery power system, and the prototype build, debugging, and validation. The sections below document the system through its wiring and subsystem diagrams, then the fully integrated hardware.</p>
+      </div>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;">
+        <div style="background:#F4F3EF;padding:22px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.56 0.14 252);margin-bottom:10px;">SIGNALS</div><div style="font-size:14.5px;color:#15171B;line-height:1.5;">Main R / Y / G</div></div>
+        <div style="background:#F4F3EF;padding:22px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.56 0.14 252);margin-bottom:10px;">PROTECTED</div><div style="font-size:14.5px;color:#15171B;line-height:1.5;">Left-turn arrow</div></div>
+        <div style="background:#F4F3EF;padding:22px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.56 0.14 252);margin-bottom:10px;">PEDESTRIAN</div><div style="font-size:14.5px;color:#15171B;line-height:1.5;">Crossing R / Y / G</div></div>
+        <div style="background:#F4F3EF;padding:22px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.56 0.14 252);margin-bottom:10px;">CONTROL</div><div style="font-size:14.5px;color:#15171B;line-height:1.5;">Sound ON/OFF toggle</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENTS band -->
+  <section data-screen-label="TRAFFIC · BOM" style="border-top:1px solid #DEDCD3;padding:74px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:36px;">Built entirely from discrete parts</div>
+      <div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:13px;">
+        <span style="border:1px solid #DEDCD3;background:#fff;border-radius:4px;padding:10px 16px;color:#15171B;">NE555 timer</span>
+        <span style="border:1px solid #DEDCD3;background:#fff;border-radius:4px;padding:10px 16px;color:#15171B;">LM324 comparators</span>
+        <span style="border:1px solid #DEDCD3;background:#fff;border-radius:4px;padding:10px 16px;color:#15171B;">LM358 amplifiers</span>
+        <span style="border:1px solid #DEDCD3;background:#fff;border-radius:4px;padding:10px 16px;color:#15171B;">CD4069 inverters</span>
+        <span style="border:1px solid #DEDCD3;background:#fff;border-radius:4px;padding:10px 16px;color:#15171B;">CD4081 AND gates</span>
+        <span style="border:1px solid #DEDCD3;background:#fff;border-radius:4px;padding:10px 16px;color:#15171B;">SN7476 flip-flops</span>
+        <span style="border:1px solid #DEDCD3;background:#fff;border-radius:4px;padding:10px 16px;color:#15171B;">IRF510 MOSFETs</span>
+        <span style="border:1px solid #DEDCD3;background:#fff;border-radius:4px;padding:10px 16px;color:#15171B;">LM317 regulators</span>
+        <span style="border:1px solid #DEDCD3;background:#fff;border-radius:4px;padding:10px 16px;color:#15171B;">LM2937-5.0</span>
+        <span style="border:1px solid #DEDCD3;background:#fff;border-radius:4px;padding:10px 16px;color:#15171B;">BS170 / BS250</span>
+        <span style="border:1px solid #DEDCD3;background:#fff;border-radius:4px;padding:10px 16px;color:#15171B;">7.4 V Li-ion</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 WIRING DIAGRAMS -->
+  <section id="wiring" data-screen-label="TRAFFIC · Wiring" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">02 — Wiring Diagrams &amp; System Integration</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:24ch;">Seven subsystems, one ramp tying them together.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:46px;">
+        <p style="margin:0;">The controller is documented as a set of interlocking subsystems: the timing generator, the comparator and logic decode network, the LED driver channels, the inter-board interconnect, the sound ON/OFF control, and the battery power system. The diagrams below trace signal flow and power distribution across each. These are simplified representations of the implemented hardware architecture; the original circuit schematics are shown later in Circuit Design Highlights.</p>
+      </div>
+
+      <!-- Fig 02 signal sequence timeline (full width) -->
+      <figure data-reveal="1" style="margin:0 0 18px;">
+        <div style="border:1px solid #DEDCD3;background:#fff;padding:30px 28px 26px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:22px;">Representative signal sequence: one cycle</div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+            <div style="flex:0 0 96px;font-size:13px;font-weight:600;">Main road</div>
+            <div style="flex:1;display:flex;height:26px;border-radius:3px;overflow:hidden;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#fff;">
+              <div style="width:33%;background:#2FA35B;display:flex;align-items:center;justify-content:center;">GREEN</div>
+              <div style="width:6%;background:#E2A032;"></div>
+              <div style="width:61%;background:#CF4632;display:flex;align-items:center;justify-content:center;">RED</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px;">
+            <div style="flex:0 0 96px;font-size:13px;font-weight:600;">Turn arrow</div>
+            <div style="flex:1;display:flex;height:26px;border-radius:3px;overflow:hidden;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#fff;">
+              <div style="width:39%;background:#CF4632;"></div>
+              <div style="width:15%;background:#2FA35B;display:flex;align-items:center;justify-content:center;">▲ GRN</div>
+              <div style="width:4%;background:#E2A032;"></div>
+              <div style="width:42%;background:#CF4632;"></div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="flex:0 0 96px;font-size:13px;font-weight:600;">Crosswalk</div>
+            <div style="flex:1;display:flex;height:26px;border-radius:3px;overflow:hidden;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#fff;">
+              <div style="width:58%;background:#CF4632;display:flex;align-items:center;justify-content:center;">RED</div>
+              <div style="width:30%;background:#2FA35B;display:flex;align-items:center;justify-content:center;">WALK</div>
+              <div style="width:12%;background:#E2A032;"></div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;color:#8A8D94;">
+            <span>t = 0 s</span><span>thresholds sliced from the 555 ramp</span><span>t ≈ 55 s</span>
+          </div>
+        </div>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 02</span> &nbsp; Signal sequence over one cycle: each phase boundary corresponds to a comparator threshold on the rising ramp.</figcaption>
+      </figure>
+
+      <!-- diagram grid -->
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:18px;">
+
+        <!-- Fig 03 — 555 time base -->
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;padding:26px 24px;height:100%;">
+            <div style="display:flex;gap:16px;align-items:stretch;flex-wrap:wrap;">
+              <div style="flex:1 1 150px;border:1.5px solid #15171B;border-radius:3px;padding:14px;font-family:'IBM Plex Mono',monospace;">
+                <div style="font-size:10px;letter-spacing:.1em;color:#8A8D94;margin-bottom:7px;">NE555</div>
+                <div style="font-size:12.5px;color:#15171B;line-height:1.5;">astable ramp<br><span style="color:#8A8D94;font-size:11px;">1.5k · 2.7k · 1k · 27k<br>1000 µF · 100 µF<br>1N4148 · 1N4007</span></div>
+              </div>
+              <div style="flex:1 1 150px;display:flex;flex-direction:column;justify-content:center;">
+                <svg viewBox="0 0 160 90" style="width:100%;height:auto;">
+                  <line x1="6" y1="6" x2="6" y2="78" stroke="#CFCCBF" stroke-width="1"/>
+                  <line x1="6" y1="78" x2="156" y2="78" stroke="#CFCCBF" stroke-width="1"/>
+                  <polyline points="6,74 70,14 70,74 134,14 134,74" fill="none" stroke="oklch(0.56 0.14 252)" stroke-width="2"/>
+                  <text x="12" y="14" font-family="monospace" font-size="8" fill="#62656D">3.335 V</text>
+                  <text x="12" y="72" font-family="monospace" font-size="8" fill="#62656D">199 mV</text>
+                </svg>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#8A8D94;text-align:center;margin-top:4px;">period 48.4–59.7 s</div>
+              </div>
+            </div>
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 03</span> &nbsp; 555 sawtooth time base (Diagram A): a slow 0.199–3.335 V ramp sets the master cycle, trimmer-adjustable from 48.4 s to 59.7 s.</figcaption>
+        </figure>
+
+        <!-- Fig 04 — comparator + logic decode -->
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;padding:0;height:100%;">
+            <div style="padding:18px 22px 6px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;">Ramp threshold → phase</div>
+            <div style="padding:6px 22px 4px;display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #ECEAE3;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8D94;">≥ 0.20 V</span><span style="font-size:13.5px;">System ON</span></div>
+            <div style="padding:8px 22px;display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #ECEAE3;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8D94;">&lt; 1.32 V</span><span style="font-size:13.5px;">Main green / yellow</span></div>
+            <div style="padding:8px 22px;display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #ECEAE3;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8D94;">1.32–1.60 V</span><span style="font-size:13.5px;">Protected arrow</span></div>
+            <div style="padding:8px 22px;display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #ECEAE3;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8D94;">1.60–1.71 V</span><span style="font-size:13.5px;">Crossing walk</span></div>
+            <div style="padding:8px 22px 16px;display:flex;justify-content:space-between;gap:12px;"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8D94;">≥ 1.71 V</span><span style="font-size:13.5px;">Clearance / reset</span></div>
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 04</span> &nbsp; Comparator + logic decode (Diagram 1): LM324 comparators slice the ramp at RV-trimmed references; CD4069 inverters and CD4081 AND gates resolve nine mutually-exclusive signal outputs.</figcaption>
+        </figure>
+
+        <!-- Fig 05 — LED driver channel -->
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;padding:26px 24px;height:100%;">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;">
+              <div style="flex:1 1 96px;border:1px solid #E2E0D7;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">Logic<br><span style="color:#8A8D94;">signal</span></div>
+              <div style="color:oklch(0.56 0.14 252);">→</div>
+              <div style="flex:1 1 110px;border:1px solid #E2E0D7;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">130 ms blank<br><span style="color:#8A8D94;">LM358 + monostable</span></div>
+              <div style="color:oklch(0.56 0.14 252);">→</div>
+              <div style="flex:1 1 96px;border:1px solid #E2E0D7;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">LM317<br><span style="color:#8A8D94;">2.5 / 2.8 V</span></div>
+              <div style="color:oklch(0.56 0.14 252);">→</div>
+              <div style="flex:1 1 96px;border:1px solid #E2E0D7;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">IRF510<br><span style="color:#8A8D94;">low-side</span></div>
+              <div style="color:oklch(0.56 0.14 252);">→</div>
+              <div style="flex:1 1 96px;border:1.5px solid #15171B;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">LED bank<br><span style="color:#8A8D94;">per color</span></div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#62656D;border-top:1px solid #ECEAE3;margin-top:16px;padding-top:14px;line-height:1.6;">Red / Yellow 2.5 V · Green / Arrow 2.8 V · 8 Ω load (3 × 24 Ω ∥) · 470 µF on yellow only</div>
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 05</span> &nbsp; LED driver channel (Diagrams 2 &amp; 3c): an LM358 differentiator blanks outputs for 130 ms at each transition; an LM317 sets per-color current and an IRF510 switches the bank.</figcaption>
+        </figure>
+
+        <!-- Fig 06 — sound ON/OFF -->
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;padding:26px 24px;height:100%;">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;">
+              <div style="flex:1 1 80px;border:1px solid #E2E0D7;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">Microphone</div>
+              <div style="color:oklch(0.56 0.14 252);">→</div>
+              <div style="flex:1 1 90px;border:1px solid #E2E0D7;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">LM358 amp</div>
+              <div style="color:oklch(0.56 0.14 252);">→</div>
+              <div style="flex:1 1 110px;border:1px solid #E2E0D7;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">Monostable<br><span style="color:#8A8D94;">72 ms / 300 ms</span></div>
+              <div style="color:oklch(0.56 0.14 252);">→</div>
+              <div style="flex:1 1 110px;border:1.5px solid oklch(0.56 0.14 252);border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">SN7476<br><span style="color:#8A8D94;">1-bit toggle</span></div>
+              <div style="color:oklch(0.56 0.14 252);">→</div>
+              <div style="flex:1 1 110px;border:1px solid #E2E0D7;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">BS170 / BS250<br>+ IRF510<br><span style="color:#8A8D94;">supply gate</span></div>
+            </div>
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 06</span> &nbsp; Sound ON/OFF (Diagram 4): a clap fires a 72 ms monostable pulse that clocks an SN7476 flip-flop wired as a 1-bit toggle, gating the controller supply through MOSFET switches.</figcaption>
+        </figure>
+
+        <!-- Fig 07 — 12-pin interconnect bus -->
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;padding:26px 24px;height:100%;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:14px;">12-pin header → lighting boards</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #E2E0D7;border-radius:3px;padding:5px 9px;">+5 V</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #E2E0D7;border-radius:3px;padding:5px 9px;">GND</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #E2E0D7;border-radius:3px;padding:5px 9px;color:#CF4632;">Main R</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #E2E0D7;border-radius:3px;padding:5px 9px;color:#B07A20;">Main Y</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #E2E0D7;border-radius:3px;padding:5px 9px;color:#2FA35B;">Main G</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #E2E0D7;border-radius:3px;padding:5px 9px;color:#2FA35B;">Arrow</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #E2E0D7;border-radius:3px;padding:5px 9px;color:#CF4632;">Cross R</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #E2E0D7;border-radius:3px;padding:5px 9px;color:#B07A20;">Cross Y</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #E2E0D7;border-radius:3px;padding:5px 9px;color:#2FA35B;">Cross G</span>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#62656D;line-height:1.6;">Each lighting board taps three lines from the bus: <span style="color:#15171B;">Power · Control · Ground</span>.</div>
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 07</span> &nbsp; Interconnect bus (Diagrams 3a/3b): a shared 12-pin header distributes the eight signal lines plus +5 V and ground to the per-color lighting boards.</figcaption>
+        </figure>
+
+        <!-- Fig 08 — power distribution -->
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;padding:26px 24px;height:100%;">
+            <div style="display:flex;flex-direction:column;gap:10px;font-family:'IBM Plex Mono',monospace;">
+              <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                <div style="flex:1 1 120px;border:1.5px solid #15171B;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">7.4 V Li-ion<br><span style="color:#8A8D94;">USB charge socket</span></div>
+                <div style="color:oklch(0.56 0.14 252);">→</div>
+                <div style="flex:1 1 120px;border:1px solid #E2E0D7;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">LM2937 ×2<br><span style="color:#8A8D94;">→ 5 V logic bus</span></div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+                <div style="flex:1 1 120px;border:1px dashed #CFCCBF;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;color:#62656D;">boost converter<br><span style="color:#8A8D94;">220 µH · PN2222</span></div>
+                <div style="color:oklch(0.56 0.14 252);">→</div>
+                <div style="flex:1 1 120px;border:1px solid #E2E0D7;border-radius:3px;padding:11px 12px;font-size:11.5px;line-height:1.45;">12 V fan rail<br><span style="color:#8A8D94;">50 mA</span></div>
+              </div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#62656D;border-top:1px solid #ECEAE3;margin-top:16px;padding-top:14px;line-height:1.6;">Charge monitor: <span style="color:#CF4632;">red &lt; 6.3 V</span> · <span style="color:#2FA35B;">green &gt; 7.1 V</span></div>
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 08</span> &nbsp; Power distribution (Diagrams B, C, D): a 7.4 V Li-ion pack feeds an LM2937 5 V logic bus and a boosted 12 V fan rail, with a comparator-based charge monitor.</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 CIRCUIT DESIGN HIGHLIGHTS -->
+  <section id="circuits" data-screen-label="TRAFFIC · Circuits" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">03 — Circuit Design Highlights</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:24ch;">The engineering behind the controller.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:54px;">
+        <p style="margin:0;">Four subsystems carry the core engineering of the build. The original design schematics below document the timing generator, the LED driver channel, the battery power system, and the sound-activated power control, each annotated with the component values used in the prototype.</p>
+      </div>
+
+      <div data-reveal="1" style="margin-bottom:50px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:oklch(0.56 0.14 252);text-transform:uppercase;margin-bottom:10px;">Timing core</div>
+        <h3 style="font-weight:600;font-size:22px;letter-spacing:-0.015em;margin:0 0 12px;">NE555 sawtooth ramp generator</h3>
+        <p style="max-width:760px;font-size:16px;line-height:1.66;color:#3C3F46;margin:0 0 22px;">The master time base is a 555 timer that charges a 1000 µF capacitor into a slow sawtooth ramping from 199 mV to 3.335 V. A trim network (1.5k / 2.7k / 1k with a 27k path) sets the cycle period from 48.4 s to 59.7 s, and every downstream signal phase is defined by where this ramp sits at a given instant.</p>
+        <figure style="margin:0 auto;max-width:75%;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;padding:16px;">
+            <img data-zoom="1" src="./images/projects/traffic-sch-555.png" alt="NE555 sawtooth waveform generator schematic" style="width:100%;height:auto;display:block;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 09</span> &nbsp; Diagram A · 555 sawtooth generator feeding node A of the main controller, with min/max ramp voltage and period trim settings.</figcaption>
+        </figure>
+      </div>
+
+      <div data-reveal="1" style="margin-bottom:50px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:oklch(0.56 0.14 252);text-transform:uppercase;margin-bottom:10px;">Output stage</div>
+        <h3 style="font-weight:600;font-size:22px;letter-spacing:-0.015em;margin:0 0 12px;">LM317 + IRF510 LED driver channel</h3>
+        <p style="max-width:760px;font-size:16px;line-height:1.66;color:#3C3F46;margin:0 0 22px;">Each colour channel regulates current with an LM317 (2.5 V for red and yellow, 2.8 V for green and the arrow) into a parallel 8 Ω load, switched low-side by an IRF510 from the controller's logic signal. A 470 µF reservoir is added on the yellow channel only, to shape its transition behaviour.</p>
+        <figure style="margin:0 auto;max-width:75%;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;padding:16px;">
+            <img data-zoom="1" src="./images/projects/traffic-sch-led-driver.png" alt="LM317 and IRF510 LED driver schematic" style="width:100%;height:auto;display:block;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 10</span> &nbsp; Diagram 3c · LED driver: LM317 current regulation, IRF510 low-side switching, and per-colour output voltages.</figcaption>
+        </figure>
+      </div>
+
+      <div data-reveal="1" style="margin-bottom:50px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:oklch(0.56 0.14 252);text-transform:uppercase;margin-bottom:10px;">Power system</div>
+        <h3 style="font-weight:600;font-size:22px;letter-spacing:-0.015em;margin:0 0 12px;">Li-ion to 5 V regulation and charge detector</h3>
+        <p style="max-width:760px;font-size:16px;line-height:1.66;color:#3C3F46;margin:0 0 22px;">Two paralleled LM2937-5.0 regulators convert the 7.4 V Li-ion pack to the 5 V logic bus. A comparator stage built around a 5.1 V Zener reference and a BC177B drives two indicator LEDs, red below 6.3 V and green above 7.1 V, giving an at-a-glance state-of-charge readout.</p>
+        <figure style="margin:0 auto;max-width:75%;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;padding:16px;">
+            <img data-zoom="1" src="./images/projects/traffic-sch-power.png" alt="Li-ion 7.4V to 5V conversion and charge detector schematic" style="width:100%;height:auto;display:block;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 11</span> &nbsp; Diagram C · 7.4 V to 5 V conversion with a comparator-based battery charge detector.</figcaption>
+        </figure>
+      </div>
+
+      <div data-reveal="1" style="margin-bottom:0;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:oklch(0.56 0.14 252);text-transform:uppercase;margin-bottom:10px;">Control</div>
+        <h3 style="font-weight:600;font-size:22px;letter-spacing:-0.015em;margin:0 0 12px;">Sound-activated ON/OFF control</h3>
+        <p style="max-width:760px;font-size:16px;line-height:1.66;color:#3C3F46;margin:0 0 22px;">An electret microphone and LM358 amplifier detect a clap and fire a 72 ms monostable pulse. That pulse clocks an SN7476 flip-flop wired as a 1-bit toggle, whose output switches BS170 / BS250 and IRF510 MOSFETs in series between the controller ground and the supply negative, latching the whole system on or off hands-free.</p>
+        <figure style="margin:0 auto;max-width:75%;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;padding:16px;">
+            <img data-zoom="1" src="./images/projects/traffic-sch-sound.png" alt="Sound detection ON/OFF control schematic with SN7476 flip-flop" style="width:100%;height:auto;display:block;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 12</span> &nbsp; Diagram 4 · sound detection ON/OFF: microphone amplifier, monostable, SN7476 1-bit toggle, and MOSFET supply switch.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 COMPLETE SYSTEM IMPLEMENTATION -->
+  <section id="build" data-screen-label="TRAFFIC · Build" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">04 — Complete System Implementation</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:24ch;">Every subsystem, wired and lit on the bench.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:46px;">
+        <p style="margin:0;">The full controller integrated as a set of perfboard subsystems: the comparator and logic decode board, the LM317/IRF510 driver and power boards, the per-color LED lighting panels, and the battery supply, all tied together over the labelled 12-pin interconnect. The two views below show the complete system powered up during bring-up.</p>
+      </div>
+
+      <div data-reveal="1" style="display:flex;flex-direction:column;gap:32px;max-width:760px;margin:0 auto;">
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;">
+            <img data-zoom="1" src="./images/projects/traffic-system-full-1.jpg" alt="Complete discrete-logic traffic controller wired and powered on the bench" style="width:100%;height:auto;display:block;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 13</span> &nbsp; Complete system, bench view: controller and driver boards, LM317 power board, and lit LED signal panels interconnected during bring-up.</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;">
+            <img data-zoom="1" src="./images/projects/traffic-system-full-2.jpg" alt="Complete traffic controller showing labelled signal harness and LED panels" style="width:100%;height:auto;display:block;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 14</span> &nbsp; Complete system, harness view: the colour-labelled 12-pin signal harness fanning from the controller to the main and crossing LED panels.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 TESTING -->
+  <section id="testing" data-screen-label="TRAFFIC · Testing" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">05 — Testing &amp; Validation</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 46px;max-width:22ch;">Brought up rail-first, then phase by phase.</h2>
+      <div data-reveal="1" style="border:1px solid #DEDCD3;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+          <div style="padding:24px 26px;border-bottom:1px solid #DEDCD3;border-right:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">Power rails</div><div style="font-size:15px;color:#15171B;line-height:1.5;">5 V logic rail verified at 5.000 V, drawing 0.219 A across the active system.</div></div>
+          <div style="padding:24px 26px;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">Sequencing</div><div style="font-size:15px;color:#15171B;line-height:1.5;">Full cycle verified: main, arrow, and crosswalk advance in order with no overlap.</div></div>
+          <div style="padding:24px 26px;border-right:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">Timing</div><div style="font-size:15px;color:#15171B;line-height:1.5;">Cycle tuned between 48–60 s via the reference trimmers.</div></div>
+          <div style="padding:24px 26px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">LED drivers</div><div style="font-size:15px;color:#15171B;line-height:1.5;">Per-color voltages confirmed at the LM317 outputs; panels lit uniformly.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 OUTCOME -->
+  <section data-screen-label="TRAFFIC · Outcome" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">06 — Outcome</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.1;letter-spacing:-0.02em;margin:0 0 28px;max-width:24ch;">A complete intersection controller, with zero lines of code.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:48px;">
+        <p style="margin:0 0 18px;">This project delivers the full behaviour of a microcontroller-based traffic controller using only analog and digital hardware, with <strong style="font-weight:600;color:#15171B;">zero microcontrollers and zero firmware</strong>. Every state and transition that software would normally handle is realized physically, in a timing generator, a comparator bank, and a combinational logic network that sequence the intersection.</p>
+        <p style="margin:0 0 18px;">Building the state machine in hardware exercised the full breadth of the discipline: analog circuit design for the timing and threshold stages, digital logic design for the decode network, power regulation across multiple rails, MOSFET driver design for the signal loads, and the system integration, multi-board interconnect, and rail-first debugging and validation needed to make it all run together reliably.</p>
+        <p style="margin:0;">The result is a multi-subsystem build rather than a single board: separate power, control, and LED driver boards tied together over a shared 12-pin signal bus, feeding multiple signal heads for the main road, a protected turn arrow, and the crosswalk, all sequenced on a trimmer-set 48–60 second cycle and powered from a single rechargeable battery.</p>
+      </div>
+
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#8A8D94;text-transform:uppercase;margin-bottom:18px;">Project specification</div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;">
+        <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Microcontrollers</div><div style="font-size:15.5px;font-weight:600;color:#15171B;">0</div></div>
+        <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Firmware</div><div style="font-size:15.5px;font-weight:600;color:#15171B;">None</div></div>
+        <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Logic family</div><div style="font-size:15.5px;font-weight:600;color:#15171B;">CMOS + discrete</div></div>
+        <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Timing core</div><div style="font-size:15.5px;font-weight:600;color:#15171B;">NE555 sawtooth</div></div>
+        <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Cycle time</div><div style="font-size:15.5px;font-weight:600;color:#15171B;">48–60 s</div></div>
+        <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Power rails</div><div style="font-size:15.5px;font-weight:600;color:#15171B;">5 V &amp; 12 V</div></div>
+        <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Battery</div><div style="font-size:15.5px;font-weight:600;color:#15171B;">7.4 V Li-ion</div></div>
+        <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Logic rail</div><div style="font-size:15.5px;font-weight:600;color:#15171B;">5.000 V @ 0.219 A</div></div>
+        <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Signal heads</div><div style="font-size:15.5px;font-weight:600;color:#15171B;">Main · Arrow · Crossing</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / NEXT -->
+  <footer data-screen-label="TRAFFIC · Footer" style="border-top:1px solid #DEDCD3;background:#F4F3EF;padding:74px 0 60px;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:26px;">Next project</div>
+      <a href="PAD.dc.html" style="text-decoration:none;display:block;border-top:1px solid #DEDCD3;padding:30px 0;">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;">
+          <div style="font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-0.03em;color:#15171B;">Personal Alert Device →</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:oklch(0.56 0.14 252);">PROJECT 01</div>
+        </div>
+        <div style="font-size:15px;color:#3C3F46;margin-top:10px;max-width:560px;">Embedded wearable: custom PCB, BLE firmware, and heart-rate sensing.</div>
+      </a>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:48px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#62656D;">
+        <div>Renad Alanazi, Electrical Engineer</div>
+        <a href="Portfolio.dc.html" style="text-decoration:none;color:#62656D;">← Back to portfolio index</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div data-lightbox="1" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(15,16,18,.92);align-items:center;justify-content:center;padding:5vw;cursor:zoom-out;">
+    <img alt="" style="max-width:100%;max-height:90vh;object-fit:contain;border:1px solid rgba(255,255,255,.2);background:#fff;">
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){
+    const q = (s)=>Array.from(document.querySelectorAll(s));
+    const bar = document.querySelector('[data-progress]');
+    const onScroll = ()=>{
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const p = max>0 ? h.scrollTop/max : 0;
+      if(bar) bar.style.width = (p*100).toFixed(2)+'%';
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    const items = q('[data-reveal]');
+    const vh = window.innerHeight || 800;
+    items.forEach(el=>{
+      if(el.getBoundingClientRect().top < vh*0.92){ el.style.opacity='1'; return; }
+      el.style.opacity='0';
+      el.style.transform='translateY(16px)';
+      el.style.transition='opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+    });
+    const reveal = (el)=>{ el.style.opacity='1'; el.style.transform='none'; };
+    const hidden = items.filter(el=>el.style.opacity==='0');
+    if('IntersectionObserver' in window){
+      const io = new IntersectionObserver((es)=>{
+        es.forEach(e=>{ if(e.isIntersecting){ reveal(e.target); io.unobserve(e.target);} });
+      },{rootMargin:'0px 0px -8% 0px', threshold:0.06});
+      hidden.forEach(el=>io.observe(el));
+    } else { hidden.forEach(reveal); }
+    setTimeout(()=>items.forEach(reveal), 1600);
+
+    const lb = document.querySelector('[data-lightbox]');
+    const lbimg = lb && lb.querySelector('img');
+    q('[data-zoom]').forEach(img=>{
+      img.style.cursor='zoom-in';
+      img.addEventListener('click', ()=>{ if(lb&&lbimg){ lbimg.src=img.getAttribute('src'); lb.style.display='flex'; } });
+    });
+    if(lb) lb.addEventListener('click', ()=>{ lb.style.display='none'; });
+
+    q('a[data-anchor]').forEach(a=>{
+      a.addEventListener('click',(e)=>{
+        const id = a.getAttribute('href');
+        if(id && id.charAt(0)==='#'){
+          const t = document.querySelector(id);
+          if(t){ e.preventDefault(); window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 72, behavior:'smooth'}); }
+        }
+      });
+    });
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

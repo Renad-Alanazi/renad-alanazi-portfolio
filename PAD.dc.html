@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F4F3EF;color:#15171B;-webkit-font-smoothing:antialiased;font-family:'Archivo',system-ui,sans-serif}
+::selection{background:#15171B;color:#F4F3EF}
+img{display:block}
+a{color:inherit}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-thumb{background:#CFCCC2;border:3px solid #F4F3EF;border-radius:20px}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;background:#F4F3EF;">
+
+  <div data-progress="1" style="position:fixed;top:0;left:0;height:2px;width:0%;background:oklch(0.56 0.14 252);z-index:200;"></div>
+
+  <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(244,243,239,.82);border-bottom:1px solid #DEDCD3;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;">
+        <a href="Portfolio.dc.html" style="text-decoration:none;color:#62656D;">← INDEX</a>
+        <span style="color:#CDCABF;">/</span>
+        <span style="color:#15171B;font-weight:600;">PAD</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;color:#62656D;text-transform:uppercase;">
+        <a data-anchor="1" href="#overview" style="text-decoration:none;">Overview</a>
+        <a data-anchor="1" href="#architecture" style="text-decoration:none;">Architecture</a>
+        <a data-anchor="1" href="#hardware" style="text-decoration:none;">Hardware</a>
+        <a data-anchor="1" href="#testing" style="text-decoration:none;">Testing</a>
+        <a href="Wireless-Charging.dc.html" style="text-decoration:none;color:oklch(0.56 0.14 252);font-weight:600;">Project 02 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header data-screen-label="PAD · Hero" style="max-width:1180px;margin:0 auto;padding:70px 40px 54px;">
+    <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:30px;">Project 01 &nbsp;/&nbsp; Embedded Wearable System</div>
+    <h1 data-reveal="1" style="font-weight:800;font-size:clamp(42px,7.4vw,82px);line-height:0.97;letter-spacing:-0.035em;margin:0 0 28px;max-width:14ch;">Personal Alert Device</h1>
+    <p data-reveal="1" style="max-width:600px;font-size:19px;line-height:1.6;color:#3C3F46;margin:0 0 44px;">A wrist-worn embedded system for continuous heart-rate monitoring and manual emergency alerting, built on a Bluetooth Low Energy SoC with a custom two-layer PCB and a 3D-printed enclosure.</p>
+
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;margin-bottom:52px;">
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Role</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">PCB design, electronics integration, testing &amp; validation</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Domain</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">Embedded systems · Wearable hardware</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Context</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">Boston University · Team capstone</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Year</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">2025</div>
+      </div>
+    </div>
+
+    <figure data-reveal="1" style="margin:0 auto;max-width:500px;">
+      <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;">
+        <img data-zoom="1" src="./images/projects/pad-hero-device.jpg" alt="Assembled PAD wrist device" style="width:100%;height:auto;">
+      </div>
+      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 01</span> &nbsp; Finished device · assembled prototype with 3D-printed enclosure, status-LED cluster, push-button, and elastic strap.</figcaption>
+    </figure>
+  </header>
+
+  <!-- 01 OVERVIEW -->
+  <section id="overview" data-screen-label="PAD · Overview" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">01&nbsp;&nbsp;Overview</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:20ch;">A self-contained safety wearable combining biosignal sensing and emergency alerting.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;">
+        <p style="margin:0 0 18px;">The Personal Alert Device (PAD) is a wrist-worn embedded system developed as a team capstone project at Boston University. It monitors the wearer's heart rate and provides a manual emergency-alert trigger, combining biosignal acquisition, local event logging, and multi-modal user feedback in a battery-powered package small enough to wear.</p>
+        <p style="margin:0;">My contributions centered on the electronics and system integration: schematic capture, custom PCB design, hardware prototyping, and the testing and validation of the assembled device. The sections below trace the design from system architecture through PCB development, firmware integration, and bench validation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 ARCHITECTURE -->
+  <section id="architecture" data-screen-label="PAD · Architecture" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">02&nbsp;&nbsp;System Architecture</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:20ch;">One SoC coordinating sensing, alerting, logging, and power.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:46px;">
+        <p style="margin:0 0 18px;">The system is organized around a <strong style="font-weight:600;color:#15171B;">Seeed Studio XIAO nRF52840</strong>, an ARM Cortex-M4F SoC with integrated Bluetooth Low Energy, acting as the central controller. A <strong style="font-weight:600;color:#15171B;">MAX30102</strong> optical sensor provides heart-rate data over I²C, while a momentary push-button serves as the manual alert trigger.</p>
+        <p style="margin:0;">Three discrete status LEDs (red / amber / green) and a piezo buzzer form the alert and feedback path; a microSD card provides non-volatile event logging; and a 1100 mAh lithium-ion cell powers the device with USB-C recharging. The schematic captures the full interconnect, including 330 Ω LED current limiting and a PTC-protected sensing branch.</p>
+      </div>
+
+      <!-- block diagram -->
+      <div data-reveal="1" style="border:1px solid #DEDCD3;background:#fff;padding:34px 28px;margin-bottom:14px;">
+        <div style="display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:14px;font-family:'IBM Plex Mono',monospace;">
+          <div style="flex:1 1 150px;min-width:150px;border:1px solid #E2E0D7;padding:16px;border-radius:3px;">
+            <div style="font-size:10px;letter-spacing:.12em;color:#8A8D94;margin-bottom:8px;">INPUTS</div>
+            <div style="font-size:13px;line-height:1.7;color:#15171B;">MAX30102<br>Push-button<br>Thermistor (PTC)</div>
+          </div>
+          <div style="display:flex;align-items:center;color:oklch(0.56 0.14 252);font-size:20px;">→</div>
+          <div style="flex:1 1 170px;min-width:170px;border:1.5px solid oklch(0.56 0.14 252);padding:16px;border-radius:3px;background:#fff;color:#15171B;">
+            <div style="font-size:10px;letter-spacing:.12em;color:oklch(0.50 0.13 252);margin-bottom:8px;">CONTROLLER</div>
+            <div style="font-size:13px;line-height:1.55;">XIAO nRF52840<br><span style="color:#8A8D94;font-size:11.5px;">Cortex-M4F · BLE</span></div>
+          </div>
+          <div style="display:flex;align-items:center;color:oklch(0.56 0.14 252);font-size:20px;">→</div>
+          <div style="flex:1 1 150px;min-width:150px;border:1px solid #E2E0D7;padding:16px;border-radius:3px;">
+            <div style="font-size:10px;letter-spacing:.12em;color:#8A8D94;margin-bottom:8px;">OUTPUTS</div>
+            <div style="font-size:13px;line-height:1.7;color:#15171B;">Status LEDs ×3<br>Piezo buzzer<br>microSD log</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:#8A8D94;">POWER:&nbsp; 1100 mAh Li-ion · USB-C charge</div>
+      </div>
+
+      <figure data-reveal="1" style="margin:24px 0 0;">
+        <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;">
+          <img data-zoom="1" src="./images/projects/pad-schematic-v2.png" alt="PAD full system schematic" style="width:100%;height:auto;">
+        </div>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 02</span> &nbsp; Full system schematic showing the USB-C power interface, XIAO nRF52840 controller, MAX30102 heart-rate sensor, alerting outputs, thermistor sensing branch, and battery subsystem.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SYSTEM AT A GLANCE -->
+  <section data-screen-label="PAD · At a glance" style="border-top:1px solid #DEDCD3;padding:78px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:40px;">System at a glance</div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;">
+        <div style="background:#F4F3EF;padding:28px 26px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:14px;">Compute &amp; wireless</div>
+          <div style="font-size:21px;font-weight:600;line-height:1.2;margin-bottom:6px;color:#15171B;">XIAO nRF52840</div>
+          <div style="font-size:13.5px;color:#62656D;line-height:1.5;">Cortex-M4F SoC with Bluetooth Low Energy</div>
+        </div>
+        <div style="background:#F4F3EF;padding:28px 26px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:14px;">Sensing</div>
+          <div style="font-size:21px;font-weight:600;line-height:1.2;margin-bottom:6px;color:#15171B;">MAX30102</div>
+          <div style="font-size:13.5px;color:#62656D;line-height:1.5;">Optical heart-rate sensor over I²C</div>
+        </div>
+        <div style="background:#F4F3EF;padding:28px 26px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:14px;">Alerting</div>
+          <div style="font-size:21px;font-weight:600;line-height:1.2;margin-bottom:6px;color:#15171B;">LED + buzzer</div>
+          <div style="font-size:13.5px;color:#62656D;line-height:1.5;">Three-tier status LEDs and audible alarm</div>
+        </div>
+        <div style="background:#F4F3EF;padding:28px 26px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:14px;">Power &amp; storage</div>
+          <div style="font-size:21px;font-weight:600;line-height:1.2;margin-bottom:6px;color:#15171B;">1100 mAh</div>
+          <div style="font-size:13.5px;color:#62656D;line-height:1.5;">Li-ion cell · USB-C charge · microSD log</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 HARDWARE / PCB -->
+  <section id="hardware" data-screen-label="PAD · Hardware" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">03&nbsp;&nbsp;PCB &amp; Hardware Design</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">A custom two-layer board on a XIAO-shield footprint.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:46px;">
+        <p style="margin:0 0 18px;">The electronics were implemented on a <strong style="font-weight:600;color:#15171B;">custom two-layer PCB</strong> designed in EasyEDA and fabricated through JLCPCB. The board breaks out the nRF52840 module's I/O to the sensor, indicator, audio, and storage subsystems while keeping the assembly small enough to wear.</p>
+        <p style="margin:0;">Placement prioritized a compact indicator cluster (the three LEDs exit the enclosure as a single status bar) and short, direct routing between the MCU and the I²C sensor bus. Connectors and the USB-C port were positioned to align with the 3D-printed case.</p>
+      </div>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:18px;">
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#0c0c0c;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;">
+            <img data-zoom="1" src="./images/projects/pad-pcb-routing.png" alt="Routed PCB layout" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 03</span> &nbsp; PCB development · routed two-layer layout with signal traces and copper pours.</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;">
+            <img data-zoom="1" src="./images/projects/pad-pcb-layout.png" alt="PCB placement and labelled I/O" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 04</span> &nbsp; PCB development · component placement and labelled I/O with designators and pin assignments.</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#0c0c0c;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;">
+            <img data-zoom="1" src="./images/projects/pad-pcb-3d.jpg" alt="PCB 3D render" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 05</span> &nbsp; Mechanical verification · 3D render checking header, USB-C, and buzzer fit.</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;">
+            <img data-zoom="1" src="./images/projects/pad-pcb-bare.jpg" alt="Fabricated bare PCB" style="width:100%;height:100%;object-fit:contain;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 06</span> &nbsp; Fabrication · bare two-layer board from JLCPCB (part 8682122A_Y5_250326).</figcaption>
+        </figure>
+      </div>
+
+      <figure data-reveal="1" style="margin:18px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;">
+        <div>
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;">
+            <img data-zoom="1" src="./images/projects/pad-internal-build.jpg" alt="Internal assembly" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 07</span> &nbsp; Assembly · populated board seated in the enclosure with XIAO module, buzzer, and LED cluster.</figcaption>
+        </div>
+        <div>
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;">
+            <img data-zoom="1" src="./images/projects/pad-sensor-module.jpg" alt="Sensor integration" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 08</span> &nbsp; Integration · MAX30102 heart-rate sensor module wired to the board.</figcaption>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 04 FIRMWARE / INTEGRATION -->
+  <section id="firmware" data-screen-label="PAD · Firmware" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">04&nbsp;&nbsp;Firmware &amp; System Integration</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">Bringing sensing, alerting, and logging together on one pin map.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;">
+        <p style="margin:0 0 18px;">Firmware on the nRF52840 samples the heart-rate sensor over I²C, evaluates the alert state, and drives the indicator and audio outputs accordingly. A push-button press raises a manual emergency alert, annunciated through the buzzer and the red status LED, while routine operation is reflected on the amber and green indicators.</p>
+        <p style="margin:0;">Alert and sensor events are written to the microSD card for later review. The core system-integration task was verifying that the I²C sensor, GPIO-driven indicators, audio output, and storage all coexisted on the nRF52840's limited I/O, and that the assembled board behaved as the schematic intended.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 TESTING -->
+  <section id="testing" data-screen-label="PAD · Testing" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">05&nbsp;&nbsp;Testing &amp; Validation</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">Validated against a structured test plan.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:42px;">
+        <p style="margin:0;">The assembled device was validated against a test plan covering power-up, supply-rail integrity, sensor communication, and the alert path. Continuity and rail checks confirmed correct assembly; the MAX30102 was verified to return live heart-rate data; and the alert path was exercised end-to-end. Results were captured in a formal test report alongside the device user manual.</p>
+      </div>
+      <div data-reveal="1" style="border:1px solid #DEDCD3;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+          <div style="padding:24px 26px;border-bottom:1px solid #DEDCD3;border-right:1px solid #DEDCD3;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">Power &amp; rails</div>
+            <div style="font-size:15px;color:#15171B;line-height:1.5;">Continuity and supply-rail checks confirm correct board assembly.</div>
+          </div>
+          <div style="padding:24px 26px;border-bottom:1px solid #DEDCD3;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">Sensor link</div>
+            <div style="font-size:15px;color:#15171B;line-height:1.5;">MAX30102 returns live heart-rate data over the I²C bus.</div>
+          </div>
+          <div style="padding:24px 26px;border-right:1px solid #DEDCD3;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">Alert path</div>
+            <div style="font-size:15px;color:#15171B;line-height:1.5;">Button press drives the expected LED + buzzer response.</div>
+          </div>
+          <div style="padding:24px 26px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">Documentation</div>
+            <div style="font-size:15px;color:#15171B;line-height:1.5;">Formal test report and user manual completed.</div>
+          </div>
+        </div>
+      </div>
+
+      <figure data-reveal="1" style="margin:26px 0 0;">
+        <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;">
+          <img data-zoom="1" src="./images/projects/pad-wrist-integration.jpg" alt="PAD worn on wrist strap" style="width:100%;height:auto;">
+        </div>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 09</span> &nbsp; Validation · final integrated device on the wrist strap, board, sensor, and enclosure together.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 06 CHALLENGES -->
+  <section id="challenges" data-screen-label="PAD · Challenges" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">06&nbsp;&nbsp;Challenges &amp; Tradeoffs</div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:38px;max-width:1000px;">
+        <div>
+          <h3 style="font-weight:600;font-size:20px;letter-spacing:-0.01em;margin:0 0 12px;">Wearable packaging</h3>
+          <p style="margin:0;font-size:16px;line-height:1.66;color:#3C3F46;">Fitting the indicator LEDs, buzzer, sensor, and storage around the nRF52840 on a two-layer board demanded careful placement and I/O allocation. The enclosure had to align the LED cluster, button, and USB-C port with the board.</p>
+        </div>
+        <div>
+          <h3 style="font-weight:600;font-size:20px;letter-spacing:-0.01em;margin:0 0 12px;">Mixed-subsystem integration</h3>
+          <p style="margin:0;font-size:16px;line-height:1.66;color:#3C3F46;">An I²C sensor, GPIO indicators, an audio output, and a storage interface had to share one constrained SoC. Validating that they coexisted reliably, without bus or timing conflicts, drove the integration effort.</p>
+        </div>
+        <div>
+          <h3 style="font-weight:600;font-size:20px;letter-spacing:-0.01em;margin:0 0 12px;">Scope: GPS deferred</h3>
+          <p style="margin:0;font-size:16px;line-height:1.66;color:#3C3F46;">A GPS-based location feature was scoped during planning but not carried into the final hardware prototype. It is documented here as planned future work rather than a delivered capability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEC TABLE -->
+  <section data-screen-label="PAD · Specs" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:30px;">Key components</div>
+      <div data-reveal="1" style="border-top:1px solid #15171B;font-family:'IBM Plex Mono',monospace;">
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 200px;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Controller</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;font-family:'Archivo',sans-serif;">Seeed Studio XIAO nRF52840: Cortex-M4F SoC, Bluetooth Low Energy</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 200px;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Heart-rate sensor</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;font-family:'Archivo',sans-serif;">MAX30102: optical, I²C interface</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 200px;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Indicators</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;font-family:'Archivo',sans-serif;">3× status LED (red / amber / green), 330 Ω current limiting</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 200px;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Audio</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;font-family:'Archivo',sans-serif;">AS-1204B piezo buzzer: audible alert</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 200px;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Input</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;font-family:'Archivo',sans-serif;">Momentary push-button: manual emergency trigger</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 200px;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Storage</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;font-family:'Archivo',sans-serif;">microSD: local event logging</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 200px;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Power</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;font-family:'Archivo',sans-serif;">1100 mAh Li-ion · USB-C charging</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 200px;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">PCB</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;font-family:'Archivo',sans-serif;">Custom two-layer: EasyEDA → JLCPCB</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 200px;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Enclosure</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;font-family:'Archivo',sans-serif;">3D-printed, two-part, with elastic wrist strap</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / NEXT -->
+  <footer data-screen-label="PAD · Footer" style="border-top:1px solid #DEDCD3;background:#F4F3EF;padding:74px 0 60px;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:26px;">Next project</div>
+      <a href="Wireless-Charging.dc.html" style="text-decoration:none;display:block;border-top:1px solid #DEDCD3;padding:30px 0;">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;">
+          <div style="font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-0.03em;color:#15171B;">Wireless Charging System →</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:oklch(0.56 0.14 252);">PROJECT 02</div>
+        </div>
+        <div style="font-size:15px;color:#3C3F46;margin-top:10px;max-width:560px;">Inductive power transfer, coil design, and bench-validated battery charging for the wearable.</div>
+      </a>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:48px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#62656D;">
+        <div>Renad Alanazi, Electrical Engineer</div>
+        <a href="Portfolio.dc.html" style="text-decoration:none;color:#62656D;">← Back to portfolio index</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div data-lightbox="1" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(15,16,18,.92);align-items:center;justify-content:center;padding:5vw;cursor:zoom-out;">
+    <img alt="" style="max-width:100%;max-height:90vh;object-fit:contain;border:1px solid rgba(255,255,255,.2);">
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){
+    const q = (s)=>Array.from(document.querySelectorAll(s));
+
+    // reading progress
+    const bar = document.querySelector('[data-progress]');
+    const onScroll = ()=>{
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const p = max>0 ? h.scrollTop/max : 0;
+      if(bar) bar.style.width = (p*100).toFixed(2)+'%';
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    // reveal on scroll (progressive enhancement — content visible if JS fails)
+    const items = q('[data-reveal]');
+    const vh = window.innerHeight || 800;
+    items.forEach(el=>{
+      if(el.getBoundingClientRect().top < vh*0.92){ el.style.opacity='1'; return; }
+      el.style.opacity='0';
+      el.style.transform='translateY(16px)';
+      el.style.transition='opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+    });
+    const reveal = (el)=>{ el.style.opacity='1'; el.style.transform='none'; };
+    const hidden = items.filter(el=>el.style.opacity==='0');
+    if('IntersectionObserver' in window){
+      const io = new IntersectionObserver((es)=>{
+        es.forEach(e=>{ if(e.isIntersecting){ reveal(e.target); io.unobserve(e.target);} });
+      },{rootMargin:'0px 0px -8% 0px', threshold:0.06});
+      hidden.forEach(el=>io.observe(el));
+    } else { hidden.forEach(reveal); }
+    setTimeout(()=>items.forEach(reveal), 1600);
+
+    // lightbox
+    const lb = document.querySelector('[data-lightbox]');
+    const lbimg = lb && lb.querySelector('img');
+    q('[data-zoom]').forEach(img=>{
+      img.style.cursor='zoom-in';
+      img.addEventListener('click', ()=>{ if(lb&&lbimg){ lbimg.src=img.getAttribute('src'); lb.style.display='flex'; } });
+    });
+    if(lb) lb.addEventListener('click', ()=>{ lb.style.display='none'; });
+
+    // smooth in-page anchors (no scrollIntoView)
+    q('a[data-anchor]').forEach(a=>{
+      a.addEventListener('click',(e)=>{
+        const id = a.getAttribute('href');
+        if(id && id.charAt(0)==='#'){
+          const t = document.querySelector(id);
+          if(t){ e.preventDefault(); window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 72, behavior:'smooth'}); }
+        }
+      });
+    });
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F4F3EF;color:#15171B;-webkit-font-smoothing:antialiased;font-family:'Archivo',system-ui,sans-serif}
+::selection{background:#15171B;color:#F4F3EF}
+img{display:block}
+a{color:inherit}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-thumb{background:#CFCCC2;border:3px solid #F4F3EF;border-radius:20px}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;background:#F4F3EF;">
+
+  <div data-progress="1" style="position:fixed;top:0;left:0;height:2px;width:0%;background:oklch(0.56 0.14 252);z-index:200;"></div>
+
+  <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(244,243,239,.82);border-bottom:1px solid #DEDCD3;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;">
+        <a href="Portfolio.dc.html" style="text-decoration:none;color:#62656D;">← INDEX</a>
+        <span style="color:#CDCABF;">/</span>
+        <span style="color:#15171B;font-weight:600;">SEMICONDUCTOR FAB</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;color:#62656D;text-transform:uppercase;">
+        <a data-anchor="1" href="#overview" style="text-decoration:none;">Overview</a>
+        <a data-anchor="1" href="#flow" style="text-decoration:none;">Process</a>
+        <a data-anchor="1" href="#litho" style="text-decoration:none;">Litho</a>
+        <a data-anchor="1" href="#inspection" style="text-decoration:none;">Inspection</a>
+        <a href="PAD.dc.html" style="text-decoration:none;color:oklch(0.56 0.14 252);font-weight:600;">Project 01 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header data-screen-label="FAB · Hero" style="max-width:1180px;margin:0 auto;padding:70px 40px 54px;">
+    <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:30px;">Project 03 &nbsp;/&nbsp; Semiconductor Process Engineering</div>
+    <h1 data-reveal="1" style="font-weight:800;font-size:clamp(40px,6.6vw,78px);line-height:0.98;letter-spacing:-0.035em;margin:0 0 28px;max-width:17ch;">Semiconductor Fabrication &amp; Photolithography</h1>
+    <p data-reveal="1" style="max-width:640px;font-size:19px;line-height:1.6;color:#3C3F46;margin:0 0 44px;">Cleanroom microfabrication of patterned test structures on silicon: a three-mask Ti/Au metallization process executed through photolithography, wet-etch pattern transfer, and optical inspection.</p>
+
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;margin-bottom:52px;">
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Role</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">Cleanroom processing, photolithography, inspection &amp; documentation</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Domain</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">Microfabrication · Process engineering</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Context</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">Boston University · EC578 cleanroom</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Year</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">2025</div>
+      </div>
+    </div>
+
+    <figure data-reveal="1" style="margin:0;">
+      <div style="border:1px solid #DEDCD3;background:#111;overflow:hidden;max-height:640px;display:flex;align-items:center;justify-content:center;">
+        <img data-zoom="1" src="./images/projects/fab-wafer-hero.jpg" alt="Patterned silicon wafer, die array under inspection" style="width:100%;height:auto;object-fit:cover;">
+      </div>
+      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 01</span> &nbsp; Completed wafer: repeated die array of metallized test structures after pattern transfer and resist strip.</figcaption>
+    </figure>
+  </header>
+
+  <!-- 01 OVERVIEW -->
+  <section id="overview" data-screen-label="FAB · Overview" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">01&nbsp;&nbsp;Fabrication Overview</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">Building micron-scale structures through a controlled process sequence.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:46px;">
+        <p style="margin:0 0 18px;">The objective was to design and fabricate semiconductor test structures using standard cleanroom microfabrication, while building practical command of the unit processes that make up a manufacturing flow: wafer preparation, thin-film deposition, photolithography, pattern transfer, and inspection.</p>
+        <p style="margin:0;">Work was carried out on oxidized silicon wafers metallized with a <strong style="font-weight:600;color:#15171B;">titanium adhesion layer and gold</strong>, patterned across <strong style="font-weight:600;color:#15171B;">three mask levels</strong> by photolithography and defined by wet-etch pattern transfer. My role spanned hands-on processing, photolithography tasks, inspection of the finished structures, and documentation of each step and its observed result.</p>
+      </div>
+
+      <!-- stack cross-section diagram -->
+      <div data-reveal="1" style="border:1px solid #DEDCD3;background:#fff;padding:30px 28px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:20px;">Film stack cross-section</div>
+        <div style="max-width:560px;">
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px;">
+            <div style="flex:1;height:26px;background:repeating-linear-gradient(90deg,#E7B65A,#E7B65A 6px,#D9A645 6px,#D9A645 12px);border:1px solid #B98C32;border-radius:2px;"></div>
+            <div style="flex:0 0 220px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#15171B;">Gold (Au): metallization</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px;">
+            <div style="flex:1;height:14px;background:#9AA2AC;border:1px solid #757C86;border-radius:2px;"></div>
+            <div style="flex:0 0 220px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#15171B;">Titanium (Ti): adhesion, ≈75 Å</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px;">
+            <div style="flex:1;height:22px;background:#C9D7E6;border:1px solid #93A8BE;border-radius:2px;"></div>
+            <div style="flex:0 0 220px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#15171B;">Silicon dioxide (SiO₂): dielectric</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:14px;">
+            <div style="flex:1;height:40px;background:#3B3F47;border:1px solid #2A2D33;border-radius:2px;"></div>
+            <div style="flex:0 0 220px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#15171B;">Silicon (Si): substrate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 PROCESS FLOW TIMELINE -->
+  <section id="flow" data-screen-label="FAB · Process flow" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">02&nbsp;&nbsp;Process Flow</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 46px;max-width:20ch;">Ten unit steps, grouped into four process phases.</h2>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:180px 1fr;gap:0;">
+        <!-- phase A -->
+        <div style="grid-column:1;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding:22px 0 0;border-top:1px solid #15171B;">A · Substrate prep</div>
+        <div style="grid-column:2;border-top:1px solid #15171B;">
+          <div style="display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);flex:0 0 32px;">01</div><div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Wafer cleaning &amp; preparation</div><div style="font-size:15px;color:#3C3F46;line-height:1.55;">Silicon wafers cleaned to remove organic and particulate contamination before any film growth.</div></div></div>
+          <div style="display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);flex:0 0 32px;">02</div><div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Dielectric layer: SiO₂</div><div style="font-size:15px;color:#3C3F46;line-height:1.55;">An insulating silicon-dioxide layer provides isolation beneath the metal pattern.</div></div></div>
+        </div>
+        <!-- phase B -->
+        <div style="grid-column:1;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding:22px 0 0;">B · Deposition</div>
+        <div style="grid-column:2;">
+          <div style="display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);flex:0 0 32px;">03</div><div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Metal deposition: Ti / Au</div><div style="font-size:15px;color:#3C3F46;line-height:1.55;">A thin titanium adhesion layer (≈75 Å) followed by gold forms the conductive film to be patterned.</div></div></div>
+        </div>
+        <!-- phase C -->
+        <div style="grid-column:1;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding:22px 0 0;">C · Photolithography</div>
+        <div style="grid-column:2;">
+          <div style="display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);flex:0 0 32px;">04</div><div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Photoresist application</div><div style="font-size:15px;color:#3C3F46;line-height:1.55;">Resist spin-coated to a uniform film, then soft-baked to drive off solvent.</div></div></div>
+          <div style="display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);flex:0 0 32px;">05</div><div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Mask alignment &amp; UV exposure</div><div style="font-size:15px;color:#3C3F46;line-height:1.55;">Each mask level aligned to the prior layer, then exposed under UV to transfer the pattern into the resist.</div></div></div>
+          <div style="display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);flex:0 0 32px;">06</div><div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Development</div><div style="font-size:15px;color:#3C3F46;line-height:1.55;">Exposed resist developed away to open windows in the resist mask.</div></div></div>
+        </div>
+        <!-- phase D -->
+        <div style="grid-column:1;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding:22px 0 0;">D · Pattern transfer &amp; QC</div>
+        <div style="grid-column:2;">
+          <div style="display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);flex:0 0 32px;">07</div><div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Gold etch: KI / I₂</div><div style="font-size:15px;color:#3C3F46;line-height:1.55;">Exposed gold removed in a potassium-iodide etchant, transferring the resist pattern into the Au film.</div></div></div>
+          <div style="display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);flex:0 0 32px;">08</div><div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Titanium etch</div><div style="font-size:15px;color:#3C3F46;line-height:1.55;">The underlying Ti adhesion layer etched to fully clear the field between features.</div></div></div>
+          <div style="display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);flex:0 0 32px;">09</div><div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Photoresist strip</div><div style="font-size:15px;color:#3C3F46;line-height:1.55;">Remaining resist stripped, leaving the bare patterned metal structures.</div></div></div>
+          <div style="display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);flex:0 0 32px;">10</div><div><div style="font-weight:600;font-size:16.5px;margin-bottom:5px;">Inspection &amp; metrology</div><div style="font-size:15px;color:#3C3F46;line-height:1.55;">Optical microscopy used to verify pattern fidelity, alignment, and etch completeness across the die array.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- context photo of notes -->
+  <section data-screen-label="FAB · Notes" style="border-top:1px solid #DEDCD3;padding:0;">
+    <figure data-reveal="1" style="margin:0;">
+      <div style="background:#ECEAE3;overflow:hidden;max-height:620px;display:flex;align-items:center;justify-content:center;">
+        <img data-zoom="1" src="./images/projects/fab-wafer-notes-v2.jpg" alt="Finished wafer in its carrier beside handwritten process flow notes" style="width:auto;height:auto;max-width:100%;max-height:620px;object-fit:contain;display:block;">
+      </div>
+      <figcaption style="max-width:1180px;margin:0 auto;padding:14px 40px 0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;"><span style="color:oklch(0.56 0.14 252);">Fig. 02</span> &nbsp; Process documentation: finished wafer after third-mask photolithography, Au/Ti etching, and resist strip, shown alongside recorded fabrication notes.</figcaption>
+    </figure>
+  </section>
+
+  <!-- 03 PHOTOLITHOGRAPHY DEEP DIVE -->
+  <section id="litho" data-screen-label="FAB · Litho" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">03 — Photolithography Deep Dive</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">Where the pattern is defined and where tolerance is won or lost.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:46px;">
+        <p style="margin:0;">Photolithography sets the geometry of every layer, so it governed the precision of the whole flow. The sequence (coat, bake, align, expose, develop) was repeated for each of the three mask levels, with <strong style="font-weight:600;color:#15171B;">layer-to-layer alignment</strong> as the critical control point: each mask had to register to the features already on the wafer for the structures to connect as designed.</p>
+      </div>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;">
+        <div style="background:#F4F3EF;padding:26px 24px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:oklch(0.56 0.14 252);margin-bottom:12px;">01</div>
+          <div style="font-weight:600;font-size:16px;margin-bottom:7px;">Spin coat &amp; soft bake</div>
+          <div style="font-size:14px;color:#3C3F46;line-height:1.55;">Uniform resist thickness controls exposure and resolution; the soft bake stabilises the film.</div>
+        </div>
+        <div style="background:#F4F3EF;padding:26px 24px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:oklch(0.56 0.14 252);margin-bottom:12px;">02</div>
+          <div style="font-weight:600;font-size:16px;margin-bottom:7px;">Align to prior layer</div>
+          <div style="font-size:14px;color:#3C3F46;line-height:1.55;">Overlay accuracy across three masks determines whether features land where the design intends.</div>
+        </div>
+        <div style="background:#F4F3EF;padding:26px 24px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:oklch(0.56 0.14 252);margin-bottom:12px;">03</div>
+          <div style="font-weight:600;font-size:16px;margin-bottom:7px;">UV exposure</div>
+          <div style="font-size:14px;color:#3C3F46;line-height:1.55;">Dose sets the developed edge; under- or over-exposure shifts critical dimensions.</div>
+        </div>
+        <div style="background:#F4F3EF;padding:26px 24px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:oklch(0.56 0.14 252);margin-bottom:12px;">04</div>
+          <div style="font-weight:600;font-size:16px;margin-bottom:7px;">Develop</div>
+          <div style="font-size:14px;color:#3C3F46;line-height:1.55;">Develop time trades feature fidelity against resist loss; timing was held consistent per layer.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 INSPECTION GALLERY -->
+  <section id="inspection" data-screen-label="FAB · Inspection" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">04 — Wafer Inspection</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 24px;max-width:22ch;">Verifying pattern fidelity across the die array.</h2>
+
+      <p data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin:0 0 46px;">Optical inspection was performed after pattern transfer and resist strip to verify feature definition, alignment quality, and repeatability across the wafer. Multiple regions were examined under microscopy to confirm that the fabricated structures matched the intended layout and remained consistent across the die array.</p>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;">
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#111;overflow:hidden;aspect-ratio:1/1;">
+            <img data-zoom="1" src="./images/projects/fab-die-detail-b.jpg" alt="Alignment marks and pad arrays between adjacent dies" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 03</span> &nbsp; Alignment marks and pad arrays used to verify layer registration and pattern placement between adjacent dies.</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#111;overflow:hidden;aspect-ratio:1/1;">
+            <img data-zoom="1" src="./images/projects/fab-wafer-hero.jpg" alt="Repeated die structures across the wafer" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 04</span> &nbsp; Repeated die structures demonstrating pattern consistency and feature uniformity across the wafer.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 CHALLENGES -->
+  <section id="challenges" data-screen-label="FAB · Challenges" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">05 — Manufacturing Challenges &amp; Observations</div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:38px;max-width:720px;">
+        <div>
+          <h3 style="font-weight:600;font-size:20px;letter-spacing:-0.01em;margin:0 0 12px;">Layer-to-layer alignment</h3>
+          <p style="margin:0;font-size:16px;line-height:1.66;color:#3C3F46;">With three mask levels, overlay error accumulates. Careful registration to existing features was the difference between connected structures and misplaced geometry, the single most demanding control in the flow.</p>
+        </div>
+        <div>
+          <h3 style="font-weight:600;font-size:20px;letter-spacing:-0.01em;margin:0 0 12px;">Wet-etch undercut</h3>
+          <p style="margin:0;font-size:16px;line-height:1.66;color:#3C3F46;">Isotropic gold and titanium etches attack laterally as well as vertically, undercutting the resist. Etch time had to clear the field without widening features beyond tolerance.</p>
+        </div>
+        <div>
+          <h3 style="font-weight:600;font-size:20px;letter-spacing:-0.01em;margin:0 0 12px;">Adhesion &amp; film integrity</h3>
+          <p style="margin:0;font-size:16px;line-height:1.66;color:#3C3F46;">The thin Ti layer is what keeps gold bonded to the oxide; without it the metal lifts. Process order and clean interfaces were essential to a film that survived etch and strip.</p>
+        </div>
+        <div>
+          <h3 style="font-weight:600;font-size:20px;letter-spacing:-0.01em;margin:0 0 12px;">Contamination &amp; yield</h3>
+          <p style="margin:0;font-size:16px;line-height:1.66;color:#3C3F46;">Particles and residue translate directly into defective dies. Cleanroom discipline and consistent step timing were the practical levers on yield across the wafer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 RESULTS -->
+  <section data-screen-label="FAB · Results" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">06 — Results &amp; Takeaways</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.1;letter-spacing:-0.02em;margin:0 0 28px;max-width:24ch;">A fully patterned wafer, and a working feel for process control.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:48px;">
+        <p style="margin:0 0 18px;">The flow produced a wafer of repeated, metallized test structures with the resist cleanly stripped and patterns transferred across the die array, the intended outcome of a three-mask Ti/Au process.</p>
+        <p style="margin:0;">More importantly, the work built a hands-on understanding of how unit processes couple: how lithography sets tolerance, how etch chemistry and timing transfer it, and how cleanliness and consistency drive yield. These are the same control questions that scale into volume semiconductor manufacturing.</p>
+      </div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;">
+        <div style="background:#F4F3EF;padding:26px 24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:12px;">Process</div><div style="font-size:18px;font-weight:600;line-height:1.3;color:#15171B;">3-mask Ti/Au on SiO₂/Si</div></div>
+        <div style="background:#F4F3EF;padding:26px 24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:12px;">Pattern transfer</div><div style="font-size:18px;font-weight:600;line-height:1.3;color:#15171B;">Wet etch: KI/I₂ + Ti</div></div>
+        <div style="background:#F4F3EF;padding:26px 24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:12px;">Inspection</div><div style="font-size:18px;font-weight:600;line-height:1.3;color:#15171B;">Optical microscopy</div></div>
+        <div style="background:#F4F3EF;padding:26px 24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:12px;">Outcome</div><div style="font-size:18px;font-weight:600;line-height:1.3;color:#15171B;">Full-wafer die array</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / NEXT -->
+  <footer data-screen-label="FAB · Footer" style="border-top:1px solid #DEDCD3;background:#F4F3EF;padding:74px 0 60px;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:26px;">Next project</div>
+      <a href="Rain-Sensing-System.dc.html" style="text-decoration:none;display:block;border-top:1px solid #DEDCD3;padding:30px 0;">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;">
+          <div style="font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-0.03em;color:#15171B;">Rain-Sensing Control System →</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:oklch(0.56 0.14 252);">PROJECT 04</div>
+        </div>
+        <div style="font-size:15px;color:#3C3F46;margin-top:10px;max-width:560px;">Automotive electronics: rain detection with adaptive headlights and wipers, MOSFET and relay control.</div>
+      </a>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:48px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#62656D;">
+        <div>Renad Alanazi, Electrical Engineer</div>
+        <a href="Portfolio.dc.html" style="text-decoration:none;color:#62656D;">← Back to portfolio index</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div data-lightbox="1" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(15,16,18,.92);align-items:center;justify-content:center;padding:5vw;cursor:zoom-out;">
+    <img alt="" style="max-width:100%;max-height:90vh;object-fit:contain;border:1px solid rgba(255,255,255,.2);">
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){
+    const q = (s)=>Array.from(document.querySelectorAll(s));
+    const bar = document.querySelector('[data-progress]');
+    const onScroll = ()=>{
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const p = max>0 ? h.scrollTop/max : 0;
+      if(bar) bar.style.width = (p*100).toFixed(2)+'%';
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    const items = q('[data-reveal]');
+    const vh = window.innerHeight || 800;
+    items.forEach(el=>{
+      if(el.getBoundingClientRect().top < vh*0.92){ el.style.opacity='1'; return; }
+      el.style.opacity='0';
+      el.style.transform='translateY(16px)';
+      el.style.transition='opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+    });
+    const reveal = (el)=>{ el.style.opacity='1'; el.style.transform='none'; };
+    const hidden = items.filter(el=>el.style.opacity==='0');
+    if('IntersectionObserver' in window){
+      const io = new IntersectionObserver((es)=>{
+        es.forEach(e=>{ if(e.isIntersecting){ reveal(e.target); io.unobserve(e.target);} });
+      },{rootMargin:'0px 0px -8% 0px', threshold:0.06});
+      hidden.forEach(el=>io.observe(el));
+    } else { hidden.forEach(reveal); }
+    setTimeout(()=>items.forEach(reveal), 1600);
+
+    const lb = document.querySelector('[data-lightbox]');
+    const lbimg = lb && lb.querySelector('img');
+    q('[data-zoom]').forEach(img=>{
+      img.style.cursor='zoom-in';
+      img.addEventListener('click', ()=>{ if(lb&&lbimg){ lbimg.src=img.getAttribute('src'); lb.style.display='flex'; } });
+    });
+    if(lb) lb.addEventListener('click', ()=>{ lb.style.display='none'; });
+
+    q('a[data-anchor]').forEach(a=>{
+      a.addEventListener('click',(e)=>{
+        const id = a.getAttribute('href');
+        if(id && id.charAt(0)==='#'){
+          const t = document.querySelector(id);
+          if(t){ e.preventDefault(); window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 72, behavior:'smooth'}); }
+        }
+      });
+    });
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

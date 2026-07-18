@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F4F3EF;color:#15171B;-webkit-font-smoothing:antialiased;font-family:'Archivo',system-ui,sans-serif}
+::selection{background:#15171B;color:#F4F3EF}
+img{display:block}
+a{color:inherit}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-thumb{background:#CFCCC2;border:3px solid #F4F3EF;border-radius:20px}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;background:#F4F3EF;">
+
+  <div data-progress="1" style="position:fixed;top:0;left:0;height:2px;width:0%;background:oklch(0.56 0.14 252);z-index:200;"></div>
+
+  <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(244,243,239,.82);border-bottom:1px solid #DEDCD3;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;">
+        <a href="Portfolio.dc.html" style="text-decoration:none;color:#62656D;">← INDEX</a>
+        <span style="color:#CDCABF;">/</span>
+        <span style="color:#15171B;font-weight:600;">RAIN-SENSING SYSTEM</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:24px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;color:#62656D;text-transform:uppercase;">
+        <a data-anchor="1" href="#architecture" style="text-decoration:none;">Architecture</a>
+        <a data-anchor="1" href="#circuit" style="text-decoration:none;">Circuit</a>
+        <a data-anchor="1" href="#logic" style="text-decoration:none;">Logic</a>
+        <a data-anchor="1" href="#results" style="text-decoration:none;">Results</a>
+        <a href="PAD.dc.html" style="text-decoration:none;color:oklch(0.56 0.14 252);font-weight:600;">Project 01 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header data-screen-label="RAIN · Hero" style="max-width:1180px;margin:0 auto;padding:70px 40px 54px;">
+    <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:30px;">Project 04 &nbsp;/&nbsp; Automotive Electronics &amp; Embedded Systems</div>
+    <h1 data-reveal="1" style="font-weight:800;font-size:clamp(40px,6.6vw,78px);line-height:0.98;letter-spacing:-0.035em;margin:0 0 28px;max-width:16ch;">Automotive Rain-Sensing Control System</h1>
+    <p data-reveal="1" style="max-width:660px;font-size:19px;line-height:1.6;color:#3C3F46;margin:0 0 44px;">An automotive control system that detects rainfall and automatically drives the headlights and windshield wipers, adapting headlight brightness and wiper speed to rain intensity to improve driver visibility and safety.</p>
+
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;margin-bottom:52px;">
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Role</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">System architecture, electronics, prototyping, testing</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Domain</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">Automotive electronics · Embedded control</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Context</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">Boston University · Team project</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Year</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">2023</div>
+      </div>
+    </div>
+
+    <figure data-reveal="1" style="margin:0 auto;max-width:740px;">
+      <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;">
+        <img data-zoom="1" src="./images/projects/rain-prototype-integrated.jpg" alt="Completed rain-sensing prototype with windshield, wiper, and dual headlights" style="width:100%;height:auto;">
+      </div>
+      <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 01</span> &nbsp; Completed rain-sensing prototype — windshield, motor-driven wiper, dual headlights, and the control electronics on the test rig.</figcaption>
+    </figure>
+  </header>
+
+  <!-- 01 OVERVIEW -->
+  <section id="overview" data-screen-label="RAIN · Overview" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">01 — Project Overview</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">Automating two safety systems from a single rain measurement.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:46px;">
+        <p style="margin:0 0 18px;">Drivers often react late to changing rain: switching on headlights and wipers manually, at the wrong speed, or not at all. This project closes that loop in hardware: an optical sensor measures rainfall on the windshield, and the controller drives both the headlights and wipers automatically, scaling each output to the measured intensity.</p>
+        <p style="margin:0;">The system was built and validated on a benchtop windshield rig. My work covered the full stack: system architecture, the sensor and control electronics, the MOSFET and relay power stages, mechanical CAD, prototype construction, and the testing program that produced the results below.</p>
+      </div>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;">
+        <div style="background:#F4F3EF;padding:26px 24px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:oklch(0.56 0.14 252);text-transform:uppercase;margin-bottom:14px;">Problem</div>
+          <div style="font-size:15px;color:#3C3F46;line-height:1.55;">Manual headlight/wiper control lags behind changing rainfall, reducing visibility.</div>
+        </div>
+        <div style="background:#F4F3EF;padding:26px 24px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:oklch(0.56 0.14 252);text-transform:uppercase;margin-bottom:14px;">Objective</div>
+          <div style="font-size:15px;color:#3C3F46;line-height:1.55;">Detect rain and drive both systems automatically, scaled to intensity, in real time.</div>
+        </div>
+        <div style="background:#F4F3EF;padding:26px 24px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:oklch(0.56 0.14 252);text-transform:uppercase;margin-bottom:14px;">Outcome</div>
+          <div style="font-size:15px;color:#3C3F46;line-height:1.55;">90% automatic activation at a ~1.9 s response, validated on a windshield rig.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 REQUIREMENTS -->
+  <section id="requirements" data-screen-label="RAIN · Requirements" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">02 — Engineering Requirements</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 46px;max-width:22ch;">What the system had to do, and how well.</h2>
+      <div data-reveal="1" style="border-top:1px solid #15171B;">
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:20px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 220px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:3px;">Rain detection</div><div style="flex:1 1 300px;font-size:15.5px;color:#15171B;line-height:1.5;">Automatically sense the presence and intensity of water on the windshield.</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:20px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 220px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:3px;">Adaptive headlights</div><div style="flex:1 1 300px;font-size:15.5px;color:#15171B;line-height:1.5;">Activate headlights on rain and adjust brightness with intensity.</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:20px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 220px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:3px;">Variable-speed wipers</div><div style="flex:1 1 300px;font-size:15.5px;color:#15171B;line-height:1.5;">Run the wiper motor and step its speed with rainfall intensity.</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:20px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 220px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:3px;">Response time</div><div style="flex:1 1 300px;font-size:15.5px;color:#15171B;line-height:1.5;">React from rain onset to active outputs in under 2 seconds.</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:20px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 220px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:3px;">Reliability</div><div style="flex:1 1 300px;font-size:15.5px;color:#15171B;line-height:1.5;">Activate consistently across repeated trials, robust to switching noise.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 ARCHITECTURE -->
+  <section id="architecture" data-screen-label="RAIN · Architecture" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">03 — System Architecture</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">A sense → decide → drive loop on a 12 V domain.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:44px;">
+        <p style="margin:0;">The optical sensor feeds an analog rainfall signal to the Arduino, which classifies intensity and commands two output paths: a <strong style="font-weight:600;color:#15171B;">MOSFET stage</strong> for PWM headlight brightness, and a <strong style="font-weight:600;color:#15171B;">relay stage</strong> for the wiper motor. A 12 V battery powers the loads; the controller updates both outputs continuously as conditions change.</p>
+      </div>
+
+      <div data-reveal="1" style="border:1px solid #DEDCD3;background:#fff;padding:34px 28px;margin-bottom:18px;">
+        <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:14px;font-family:'IBM Plex Mono',monospace;justify-content:center;">
+          <div style="flex:1 1 160px;min-width:160px;border:1px solid #E2E0D7;border-radius:3px;padding:16px;"><div style="font-size:10px;letter-spacing:.12em;color:#8A8D94;margin-bottom:8px;">SENSE</div><div style="font-size:13px;line-height:1.6;color:#15171B;">Optical rain sensor<br><span style="color:#8A8D94;font-size:11.5px;">analog signal</span></div></div>
+          <div style="display:flex;align-items:center;color:oklch(0.56 0.14 252);font-size:20px;">→</div>
+          <div style="flex:1 1 180px;min-width:180px;border:1.5px solid oklch(0.56 0.14 252);border-radius:3px;padding:16px;background:#fff;"><div style="font-size:10px;letter-spacing:.12em;color:oklch(0.50 0.13 252);margin-bottom:8px;">DECIDE</div><div style="font-size:13px;line-height:1.6;color:#15171B;">Arduino controller<br><span style="color:#8A8D94;font-size:11.5px;">intensity classification</span></div></div>
+          <div style="display:flex;align-items:center;color:oklch(0.56 0.14 252);font-size:20px;">→</div>
+          <div style="flex:1 1 220px;min-width:220px;display:flex;flex-direction:column;gap:10px;">
+            <div style="border:1px solid #E2E0D7;border-radius:3px;padding:13px 14px;"><div style="font-size:10px;letter-spacing:.12em;color:#8A8D94;margin-bottom:6px;">DRIVE · MOSFET</div><div style="font-size:13px;color:#15171B;">Headlights — PWM brightness</div></div>
+            <div style="border:1px solid #E2E0D7;border-radius:3px;padding:13px 14px;"><div style="font-size:10px;letter-spacing:.12em;color:#8A8D94;margin-bottom:6px;">DRIVE · RELAY</div><div style="font-size:13px;color:#15171B;">Wiper motor — speed / direction</div></div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:#8A8D94;">POWER &nbsp;—&nbsp; 12 V rechargeable battery</div>
+      </div>
+
+      <figure data-reveal="1" style="margin:18px 0 0;">
+        <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;">
+          <img data-zoom="1" src="./images/projects/rain-block-diagram-v3.jpg" alt="System functional block diagram" style="width:100%;height:auto;">
+        </div>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 02</span> &nbsp; Functional block diagram — sensing, control, power, and the headlight and wiper output stages.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 04 CIRCUIT -->
+  <section id="circuit" data-screen-label="RAIN · Circuit" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">04 — Circuit Design</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 46px;max-width:22ch;">Controller, drivers, and protected output stages.</h2>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:34px;align-items:start;">
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;">
+            <img data-zoom="1" src="./images/projects/rain-schematic-v3.jpg" alt="System schematic" style="width:100%;height:auto;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 03</span> &nbsp; Full schematic — Arduino, MOSFET headlight drivers, relays, and 12 V supply.</figcaption>
+        </figure>
+        <div style="display:flex;flex-direction:column;gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;">
+          <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-weight:600;font-size:15.5px;margin-bottom:5px;color:#15171B;">Rain sensor interface</div><div style="font-size:14px;color:#3C3F46;line-height:1.55;">Optical sensor conditioned to the Arduino ADC; threshold sets the intensity tiers.</div></div>
+          <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-weight:600;font-size:15.5px;margin-bottom:5px;color:#15171B;">Arduino control system</div><div style="font-size:14px;color:#3C3F46;line-height:1.55;">Reads the sensor and issues PWM and digital control to the output stages.</div></div>
+          <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-weight:600;font-size:15.5px;margin-bottom:5px;color:#15171B;">MOSFET driver stage</div><div style="font-size:14px;color:#3C3F46;line-height:1.55;">Logic-level MOSFETs switch the headlights; PWM sets brightness per rain tier.</div></div>
+          <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-weight:600;font-size:15.5px;margin-bottom:5px;color:#15171B;">Relay motor control</div><div style="font-size:14px;color:#3C3F46;line-height:1.55;">Relays switch the wiper motor and its direction, isolating the inductive load.</div></div>
+          <div style="background:#F4F3EF;padding:20px 22px;"><div style="font-weight:600;font-size:15.5px;margin-bottom:5px;color:#15171B;">Headlight circuitry</div><div style="font-size:14px;color:#3C3F46;line-height:1.55;">Headlight LEDs driven from the 12 V rail through the MOSFET stage.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 SOFTWARE / LOGIC -->
+  <section id="logic" data-screen-label="RAIN · Logic" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">05 — Software &amp; Control Logic</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 46px;max-width:22ch;">Three intensity tiers, evaluated every loop.</h2>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-bottom:34px;">
+        <div style="border:1px solid #DEDCD3;background:#fff;border-radius:0;padding:24px 24px;border-top:2px solid #4B5563;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:14px;">Tier 0 · Dry</div>
+          <div style="font-size:16px;font-weight:600;margin-bottom:8px;">No droplets detected</div>
+          <div style="font-size:14px;color:#3C3F46;line-height:1.55;margin-bottom:14px;">Headlights and wipers held off.</div>
+          <code style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#2A5FAE;display:block;line-height:1.6;">analogWrite(led, 0);<br>motorControl(0);</code>
+        </div>
+        <div style="border:1px solid #DEDCD3;background:#fff;padding:24px 24px;border-top:2px solid oklch(0.56 0.14 252);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:oklch(0.50 0.13 252);text-transform:uppercase;margin-bottom:14px;">Tier 1 · Light rain</div>
+          <div style="font-size:16px;font-weight:600;margin-bottom:8px;">Drops below threshold</div>
+          <div style="font-size:14px;color:#3C3F46;line-height:1.55;margin-bottom:14px;">Dim headlights, low wiper speed.</div>
+          <code style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#2A5FAE;display:block;line-height:1.6;">analogWrite(led, 10);<br>motorControl(1);</code>
+        </div>
+        <div style="border:1px solid #DEDCD3;background:#fff;padding:24px 24px;border-top:2px solid #E2A032;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#B07A20;text-transform:uppercase;margin-bottom:14px;">Tier 2 · Heavy rain</div>
+          <div style="font-size:16px;font-weight:600;margin-bottom:8px;">Drops above threshold</div>
+          <div style="font-size:14px;color:#3C3F46;line-height:1.55;margin-bottom:14px;">Full brightness, high wiper speed.</div>
+          <code style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#2A5FAE;display:block;line-height:1.6;">analogWrite(led, 50);<br>motorControl(2);</code>
+        </div>
+      </div>
+
+      <figure data-reveal="1" style="margin:0 auto;max-width:640px;">
+        <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;max-width:100%;">
+          <img data-zoom="1" src="./images/projects/rain-flowchart-v3.jpg" alt="Control logic flowchart" style="width:100%;height:auto;">
+        </div>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 04</span> &nbsp; Decision flowchart — the droplet measurement drives the brightness and wiper-speed branches.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 06 MECHANICAL -->
+  <section id="mechanical" data-screen-label="RAIN · Mechanical" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">06 — Mechanical Design</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:24ch;">A windshield rig modeled before it was built.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:42px;">
+        <p style="margin:0;">The rig was modeled in CAD to fix the geometry that matters most to the system (the sensor's placement on the windshield relative to the wiper sweep, the headlight mounting, and an enclosure bay for the electronics and battery) before committing to the physical build.</p>
+      </div>
+      <figure data-reveal="1" style="margin:0 auto;max-width:880px;">
+        <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:20px;">
+          <img data-zoom="1" src="./images/projects/rain-cad-rig-views.png" alt="Two CAD views of the rain-sensing test rig" style="width:100%;height:auto;">
+        </div>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 05</span> &nbsp; CAD model of the test rig from two viewpoints: the enclosure with angled windshield and headlight mounts, and the wiper-arm and motor assembly over the electronics housing.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 07 PROTOTYPE -->
+  <section id="prototype" data-screen-label="RAIN · Prototype" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">07 — Prototype Development</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 46px;max-width:22ch;">From CAD to a working benchtop rig.</h2>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;">
+        <div style="border:1px solid #DEDCD3;background:#fff;padding:24px 24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.56 0.14 252);margin-bottom:8px;">01</div><div style="font-weight:600;font-size:15.5px;margin-bottom:5px;">Frame &amp; windshield</div><div style="font-size:14px;color:#3C3F46;line-height:1.55;">Aluminum-extrusion frame holding the acrylic windshield and wiper.</div></div>
+        <div style="border:1px solid #DEDCD3;background:#fff;padding:24px 24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.56 0.14 252);margin-bottom:8px;">02</div><div style="font-weight:600;font-size:15.5px;margin-bottom:5px;">Headlights &amp; motor</div><div style="font-size:14px;color:#3C3F46;line-height:1.55;">Reflector headlights and the wiper motor wired to the driver stages.</div></div>
+        <div style="border:1px solid #DEDCD3;background:#fff;padding:24px 24px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.56 0.14 252);margin-bottom:8px;">03</div><div style="font-weight:600;font-size:15.5px;margin-bottom:5px;">Electronics &amp; power</div><div style="font-size:14px;color:#3C3F46;line-height:1.55;">Arduino, drivers, and the 12 V battery integrated into the rig.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 TESTING -->
+  <section id="testing" data-screen-label="RAIN · Testing" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">08 — Testing &amp; Validation</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 46px;max-width:22ch;">Exercised against the rig, trial by trial.</h2>
+      <div data-reveal="1" style="border:1px solid #DEDCD3;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
+          <div style="padding:24px 26px;border-bottom:1px solid #DEDCD3;border-right:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">Rain detection</div><div style="font-size:15px;color:#15171B;line-height:1.5;">Water applied to the windshield to confirm the sensor triggers the outputs.</div></div>
+          <div style="padding:24px 26px;border-bottom:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">Wiper performance</div><div style="font-size:15px;color:#15171B;line-height:1.5;">Wiper cadence measured at low and high intensity (43.6 → 57.6 wipes/min).</div></div>
+          <div style="padding:24px 26px;border-right:1px solid #DEDCD3;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">Headlight activation</div><div style="font-size:15px;color:#15171B;line-height:1.5;">Headlights confirmed to activate on rain with ≥50 ft illumination every trial.</div></div>
+          <div style="padding:24px 26px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-bottom:10px;">Response time</div><div style="font-size:15px;color:#15171B;line-height:1.5;">Timed from rain onset to active outputs, averaging ~1.9 s.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 RESULTS -->
+  <section id="results" data-screen-label="RAIN · Results" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">09 — Results &amp; Performance</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.1;letter-spacing:-0.02em;margin:0 0 46px;max-width:22ch;">Measured across repeated rain trials.</h2>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:18px;">
+        <div style="border:1px solid #DEDCD3;background:#fff;padding:32px 30px;">
+          <div style="font-weight:700;font-size:clamp(44px,5vw,56px);letter-spacing:-0.03em;line-height:1;color:#15171B;">90<span style="color:oklch(0.56 0.14 252);">%</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-top:18px;">Automatic activation</div>
+          <div style="font-size:14px;color:#3C3F46;line-height:1.5;margin-top:8px;">Headlights and wipers triggered automatically on rain.</div>
+        </div>
+        <div style="border:1px solid #DEDCD3;background:#fff;padding:32px 30px;">
+          <div style="font-weight:700;font-size:clamp(44px,5vw,56px);letter-spacing:-0.03em;line-height:1;color:#15171B;">100<span style="color:oklch(0.56 0.14 252);">%</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-top:18px;">Illumination distance</div>
+          <div style="font-size:14px;color:#3C3F46;line-height:1.5;margin-top:8px;">Headlight throw of at least 50 ft met on every trial.</div>
+        </div>
+        <div style="border:1px solid #DEDCD3;background:#fff;padding:32px 30px;">
+          <div style="font-weight:700;font-size:clamp(44px,5vw,56px);letter-spacing:-0.03em;line-height:1;color:oklch(0.56 0.14 252);">~1.9<span style="font-size:0.42em;color:#8A8D94;"> s</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-top:18px;">Response time</div>
+          <div style="font-size:14px;color:#3C3F46;line-height:1.5;margin-top:8px;">Average from rain detection to system activation.</div>
+        </div>
+      </div>
+
+      <div data-reveal="1" style="border:1px solid #DEDCD3;background:#fff;padding:30px 30px 34px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#8A8D94;text-transform:uppercase;margin-bottom:24px;">Wiper rate vs. rain intensity (wipes / min)</div>
+        <div style="display:flex;align-items:center;gap:18px;margin-bottom:16px;">
+          <div style="flex:0 0 110px;font-size:14px;color:#3C3F46;">Low rain</div>
+          <div style="flex:1;height:28px;background:#ECEAE3;border-radius:3px;overflow:hidden;"><div style="width:75.7%;height:100%;background:oklch(0.70 0.10 252);"></div></div>
+          <div style="flex:0 0 70px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:600;color:#15171B;">43.6</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:18px;">
+          <div style="flex:0 0 110px;font-size:14px;color:#3C3F46;">High rain</div>
+          <div style="flex:1;height:28px;background:#ECEAE3;border-radius:3px;overflow:hidden;"><div style="width:100%;height:100%;background:oklch(0.56 0.14 252);"></div></div>
+          <div style="flex:0 0 70px;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:600;color:#15171B;">57.6</div>
+        </div>
+        <div style="font-size:13.5px;color:#3C3F46;line-height:1.6;margin-top:22px;max-width:70ch;">Wiper cadence scaled correctly with intensity: a ~32% increase from low to high rain confirmed the tiered control was acting on the sensor signal.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 CHALLENGES -->
+  <section id="challenges" data-screen-label="RAIN · Challenges" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">10 — Challenges &amp; Improvements</div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:38px;max-width:1000px;margin-bottom:52px;">
+        <div>
+          <h3 style="font-weight:600;font-size:19px;letter-spacing:-0.01em;margin:0 0 11px;">Single-threshold detection limit</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.66;color:#3C3F46;">Sensor saturation during heavy rainfall highlighted a limitation of the single-threshold detection method and informed future calibration improvements; spanning the full intensity range cleanly will require multi-level or adaptive thresholds.</p>
+        </div>
+        <div>
+          <h3 style="font-weight:600;font-size:19px;letter-spacing:-0.01em;margin:0 0 11px;">Switching noise &amp; isolation</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.66;color:#3C3F46;">Relays and the wiper motor are noisy inductive loads. Keeping the motor path relay-isolated from the logic protected the controller from switching transients.</p>
+        </div>
+        <div>
+          <h3 style="font-weight:600;font-size:19px;letter-spacing:-0.01em;margin:0 0 11px;">Response time vs. stability</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.66;color:#3C3F46;">A ~1.9 s average balanced fast reaction against false triggering; reacting too quickly to single drops caused output chatter.</p>
+        </div>
+        <div>
+          <h3 style="font-weight:600;font-size:19px;letter-spacing:-0.01em;margin:0 0 11px;">Sensor placement</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.66;color:#3C3F46;">Where the sensor sat on the windshield relative to the wiper sweep strongly affected readings. Modeling the rig in CAD first kept the geometry workable.</p>
+        </div>
+      </div>
+
+      <div data-reveal="1" style="border-top:1px solid #15171B;">
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:18px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 56px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);">→</div><div style="flex:1 1 240px;font-weight:600;font-size:16px;">Custom PCB</div><div style="flex:2 1 300px;font-size:14.5px;color:#3C3F46;line-height:1.55;">Replace the prototype wiring with a routed board for reliability and a smaller footprint.</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:18px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 56px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);">→</div><div style="flex:1 1 240px;font-weight:600;font-size:16px;">Multi-zone sensing</div><div style="flex:2 1 300px;font-size:14.5px;color:#3C3F46;line-height:1.55;">Improved sensor placement and multiple pickups to resolve heavy-rain saturation.</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:18px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 56px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);">→</div><div style="flex:1 1 240px;font-weight:600;font-size:16px;">Adaptive control</div><div style="flex:2 1 300px;font-size:14.5px;color:#3C3F46;line-height:1.55;">Continuous brightness/speed mapping with hysteresis instead of fixed tiers.</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:18px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 56px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:oklch(0.56 0.14 252);">→</div><div style="flex:1 1 240px;font-weight:600;font-size:16px;">Automotive-grade parts</div><div style="flex:2 1 300px;font-size:14.5px;color:#3C3F46;line-height:1.55;">Qualified components and packaging for temperature, vibration, and EMC robustness.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / NEXT -->
+  <footer data-screen-label="RAIN · Footer" style="border-top:1px solid #DEDCD3;background:#F4F3EF;padding:74px 0 60px;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:26px;">Next project</div>
+      <a href="Traffic-Signal-Controller.dc.html" style="text-decoration:none;display:block;border-top:1px solid #DEDCD3;padding:30px 0;">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;">
+          <div style="font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-0.03em;color:#15171B;">Discrete-Logic Traffic Controller →</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:oklch(0.56 0.14 252);">PROJECT 05</div>
+        </div>
+        <div style="font-size:15px;color:#3C3F46;margin-top:10px;max-width:560px;">A full traffic-signal controller built from comparators, logic gates, and timers, with no microcontroller.</div>
+      </a>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:48px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#62656D;">
+        <div>Renad Alanazi, Electrical Engineer</div>
+        <a href="Portfolio.dc.html" style="text-decoration:none;color:#62656D;">← Back to portfolio index</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div data-lightbox="1" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(15,16,18,.92);align-items:center;justify-content:center;padding:5vw;cursor:zoom-out;">
+    <img alt="" style="max-width:100%;max-height:90vh;object-fit:contain;border:1px solid rgba(255,255,255,.2);background:#fff;">
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){
+    const q = (s)=>Array.from(document.querySelectorAll(s));
+    const bar = document.querySelector('[data-progress]');
+    const onScroll = ()=>{
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const p = max>0 ? h.scrollTop/max : 0;
+      if(bar) bar.style.width = (p*100).toFixed(2)+'%';
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    const items = q('[data-reveal]');
+    const vh = window.innerHeight || 800;
+    items.forEach(el=>{
+      if(el.getBoundingClientRect().top < vh*0.92){ el.style.opacity='1'; return; }
+      el.style.opacity='0';
+      el.style.transform='translateY(16px)';
+      el.style.transition='opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+    });
+    const reveal = (el)=>{ el.style.opacity='1'; el.style.transform='none'; };
+    const hidden = items.filter(el=>el.style.opacity==='0');
+    if('IntersectionObserver' in window){
+      const io = new IntersectionObserver((es)=>{
+        es.forEach(e=>{ if(e.isIntersecting){ reveal(e.target); io.unobserve(e.target);} });
+      },{rootMargin:'0px 0px -8% 0px', threshold:0.06});
+      hidden.forEach(el=>io.observe(el));
+    } else { hidden.forEach(reveal); }
+    setTimeout(()=>items.forEach(reveal), 1600);
+
+    const lb = document.querySelector('[data-lightbox]');
+    const lbimg = lb && lb.querySelector('img');
+    q('[data-zoom]').forEach(img=>{
+      img.style.cursor='zoom-in';
+      img.addEventListener('click', ()=>{ if(lb&&lbimg){ lbimg.src=img.getAttribute('src'); lb.style.display='flex'; } });
+    });
+    if(lb) lb.addEventListener('click', ()=>{ lb.style.display='none'; });
+
+    q('a[data-anchor]').forEach(a=>{
+      a.addEventListener('click',(e)=>{
+        const id = a.getAttribute('href');
+        if(id && id.charAt(0)==='#'){
+          const t = document.querySelector(id);
+          if(t){ e.preventDefault(); window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 72, behavior:'smooth'}); }
+        }
+      });
+    });
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#F4F3EF;color:#15171B;-webkit-font-smoothing:antialiased;font-family:'Archivo',system-ui,sans-serif}
+::selection{background:#15171B;color:#F4F3EF}
+img{display:block}
+a{color:inherit}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-thumb{background:#CFCCC2;border:3px solid #F4F3EF;border-radius:20px}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;background:#F4F3EF;">
+
+  <div data-progress="1" style="position:fixed;top:0;left:0;height:2px;width:0%;background:oklch(0.56 0.14 252);z-index:200;"></div>
+
+  <div style="position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(244,243,239,.82);border-bottom:1px solid #DEDCD3;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;height:58px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <div style="display:flex;align-items:center;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;">
+        <a href="Portfolio.dc.html" style="text-decoration:none;color:#62656D;">← INDEX</a>
+        <span style="color:#CDCABF;">/</span>
+        <span style="color:#15171B;font-weight:600;">WIRELESS CHARGING</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:26px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;color:#62656D;text-transform:uppercase;">
+        <a data-anchor="1" href="#overview" style="text-decoration:none;">Overview</a>
+        <a data-anchor="1" href="#architecture" style="text-decoration:none;">Architecture</a>
+        <a data-anchor="1" href="#design" style="text-decoration:none;">Design</a>
+        <a data-anchor="1" href="#testing" style="text-decoration:none;">Testing</a>
+        <a href="PAD.dc.html" style="text-decoration:none;color:oklch(0.56 0.14 252);font-weight:600;">Project 01 →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header data-screen-label="WPT · Hero" style="max-width:1180px;margin:0 auto;padding:70px 40px 54px;">
+    <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:30px;">Project 02 &nbsp;/&nbsp; Wireless Power Transfer</div>
+    <h1 data-reveal="1" style="font-weight:800;font-size:clamp(42px,7.4vw,82px);line-height:0.97;letter-spacing:-0.035em;margin:0 0 28px;max-width:15ch;">Wireless Charging System</h1>
+    <p data-reveal="1" style="max-width:620px;font-size:19px;line-height:1.6;color:#3C3F46;margin:0 0 44px;">An inductive power-transfer subsystem that recharges a wearable's battery through its sealed enclosure: coil design, power chain, and a 3D-printed dock, validated on the bench at <strong style="font-weight:600;color:#15171B;">5.07 V / 0.487 A</strong> into the cell.</p>
+
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;margin-bottom:52px;">
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Role</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">Coil &amp; power-chain design, mechanical integration, testing</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Domain</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">Wireless power · Power electronics</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Context</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">Boston University · Team capstone</div>
+      </div>
+      <div style="background:#F4F3EF;padding:18px 20px;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#8A8D94;text-transform:uppercase;margin-bottom:9px;">Year</div>
+        <div style="font-size:14.5px;line-height:1.35;color:#15171B;">2025</div>
+      </div>
+    </div>
+
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;align-items:start;">
+      <figure style="margin:0;">
+        <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;aspect-ratio:1/1;">
+          <img data-zoom="1" src="./images/projects/wpt-hero-dock.jpg" alt="Wireless charging dock with copper coil and alignment magnets" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+        </div>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 01</span> &nbsp; 3D-printed charging dock: transmit coil, USB-B inlet, and permanent-magnet alignment.</figcaption>
+      </figure>
+      <figure style="margin:0;">
+        <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;aspect-ratio:1/1;">
+          <img data-zoom="1" src="./images/projects/wpt-wearable-coil.jpg" alt="Receive coil integrated on the wearable" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+        </div>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 02</span> &nbsp; Receive coil + magnet integrated on the device.</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <!-- 01 OVERVIEW -->
+  <section id="overview" data-screen-label="WPT · Overview" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">01&nbsp;&nbsp;Overview</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">Contactless charging for a sealed wearable.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;">
+        <p style="margin:0 0 18px;">The wireless charging system recharges the wearable's 1100 mAh battery through its enclosure using inductive power transfer, eliminating an exposed charging connector. Energy is coupled across a small air gap from a transmit coil in a dock to a receive coil on the device.</p>
+        <p style="margin:0;">I developed this subsystem end-to-end, from the coils and power chain to the 3D-printed dock and the bench validation of power delivery into the battery. The sections below cover the transfer architecture, the coil and mechanical design, and the measured results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 ARCHITECTURE -->
+  <section id="architecture" data-screen-label="WPT · Architecture" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">02&nbsp;&nbsp;Transfer Architecture</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">From wall power to a charging cell, with no contacts.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:46px;">
+        <p style="margin:0 0 18px;">A wall adapter converts mains AC to 5 V DC, feeding a <strong style="font-weight:600;color:#15171B;">transmitter module</strong> over a USB-B cable. The transmitter drives a hand-wound copper coil, which couples magnetically across the air gap to a <strong style="font-weight:600;color:#15171B;">receive coil</strong> on the wearable.</p>
+        <p style="margin:0;">A receiver module rectifies and conditions the recovered energy to charge the 1100 mAh lithium-ion cell. The diagram below shows the full transmit and receive chain.</p>
+      </div>
+
+      <!-- inline pipeline -->
+      <div data-reveal="1" style="border:1px solid #DEDCD3;background:#fff;padding:32px 26px;margin-bottom:14px;font-family:'IBM Plex Mono',monospace;">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;">
+          <div style="flex:1 1 120px;min-width:120px;border:1px solid #E2E0D7;border-radius:3px;padding:13px 12px;font-size:12px;line-height:1.5;color:#15171B;">AC adapter<br><span style="color:#8A8D94;">→ 5 V DC</span></div>
+          <div style="color:oklch(0.56 0.14 252);">→</div>
+          <div style="flex:1 1 120px;min-width:120px;border:1px solid #E2E0D7;border-radius:3px;padding:13px 12px;font-size:12px;line-height:1.5;color:#15171B;">TX module<br><span style="color:#8A8D94;">USB-B in</span></div>
+          <div style="color:oklch(0.56 0.14 252);">→</div>
+          <div style="flex:1 1 120px;min-width:120px;border:1px solid #C98A4B;border-radius:3px;padding:13px 12px;font-size:12px;line-height:1.5;color:#15171B;">TX coil<br><span style="color:#B07a3c;">))) field</span></div>
+          <div style="color:oklch(0.56 0.14 252);">⇢</div>
+          <div style="flex:1 1 120px;min-width:120px;border:1px solid #C98A4B;border-radius:3px;padding:13px 12px;font-size:12px;line-height:1.5;color:#15171B;">RX coil<br><span style="color:#B07a3c;">((( pickup</span></div>
+          <div style="color:oklch(0.56 0.14 252);">→</div>
+          <div style="flex:1 1 120px;min-width:120px;border:1px solid #E2E0D7;border-radius:3px;padding:13px 12px;font-size:12px;line-height:1.5;color:#15171B;">RX module<br><span style="color:#8A8D94;">rectify/cond.</span></div>
+          <div style="color:oklch(0.56 0.14 252);">→</div>
+          <div style="flex:1 1 120px;min-width:120px;border:1.5px solid oklch(0.56 0.14 252);border-radius:3px;padding:13px 12px;font-size:12px;line-height:1.5;background:#fff;color:#15171B;">1100 mAh<br><span style="color:#8A8D94;">Li-ion</span></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:16px;font-size:10.5px;letter-spacing:.08em;color:#8A8D94;text-transform:uppercase;"><span>Transmit side (dock)</span><span>Air gap</span><span>Receive side (wearable)</span></div>
+      </div>
+
+      <figure data-reveal="1" style="margin:24px auto 0;max-width:72%;">
+        <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;">
+          <img data-zoom="1" src="./images/projects/wpt-block-diagram-v2.png" alt="System power flow diagram" style="width:100%;height:auto;">
+        </div>
+        <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:12px;"><span style="color:oklch(0.56 0.14 252);">Fig. 03</span> &nbsp; System power flow diagram: AC-to-DC adapter, transmit module, inductive link, receiver module, and 1100 mAh battery charging path.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- MEASURED RESULTS -->
+  <section data-screen-label="WPT · Results" style="border-top:1px solid #DEDCD3;padding:78px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:40px;">Measured delivered power during bench validation</div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#DEDCD3;border:1px solid #DEDCD3;">
+        <div style="background:#F4F3EF;padding:30px 26px;">
+          <div style="font-weight:700;font-size:clamp(36px,5vw,56px);letter-spacing:-0.03em;line-height:1;color:#15171B;">5.07<span style="font-size:0.42em;font-weight:500;color:oklch(0.56 0.14 252);"> V</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-top:14px;">Receiver output voltage</div>
+        </div>
+        <div style="background:#F4F3EF;padding:30px 26px;">
+          <div style="font-weight:700;font-size:clamp(36px,5vw,56px);letter-spacing:-0.03em;line-height:1;color:#15171B;">0.487<span style="font-size:0.42em;font-weight:500;color:oklch(0.56 0.14 252);"> A</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-top:14px;">Battery charging current</div>
+        </div>
+        <div style="background:#F4F3EF;padding:30px 26px;">
+          <div style="font-weight:700;font-size:clamp(36px,5vw,56px);letter-spacing:-0.03em;line-height:1;color:#15171B;">≈2.47<span style="font-size:0.42em;font-weight:500;color:oklch(0.56 0.14 252);"> W</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-top:14px;">Delivered power</div>
+        </div>
+        <div style="background:#F4F3EF;padding:30px 26px;">
+          <div style="font-weight:700;font-size:clamp(36px,5vw,56px);letter-spacing:-0.03em;line-height:1;color:#15171B;">1100<span style="font-size:0.42em;font-weight:500;color:oklch(0.56 0.14 252);"> mAh</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;margin-top:14px;">Li-ion cell charged</div>
+        </div>
+      </div>
+      <div data-reveal="1" style="font-size:14px;color:#3C3F46;margin-top:22px;max-width:680px;line-height:1.6;">Bench measurement with a digital multimeter confirmed end-to-end wireless power transfer and active charging of the cell through the enclosure.</div>
+    </div>
+  </section>
+
+  <!-- 03 DESIGN -->
+  <section id="design" data-screen-label="WPT · Design" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">03&nbsp;&nbsp;Coil &amp; Power Electronics</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">Hand-wound coils, magnet-registered for repeatable coupling.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:46px;">
+        <p style="margin:0 0 18px;">The link uses hand-wound copper coils on both the transmit and receive sides. Permanent magnets were added around the coils to register the dock to the wearable, holding the two coils coaxial and at a fixed separation, the alignment that most strongly governs coupling and delivered power.</p>
+        <p style="margin:0;">The transmit side is powered from a regulated 5 V source; the receive side conditions the induced voltage to a level suitable for charging the lithium-ion cell.</p>
+      </div>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;align-items:start;max-width:80%;margin:0 auto;">
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;aspect-ratio:3/4;">
+            <img data-zoom="1" src="./images/projects/wpt-transmitter.jpg" alt="Transmitter coil and module" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 04</span> &nbsp; Transmit side hardware: 5 V adapter, USB-B input, transmitter module, and hand-wound transmit coil.</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;aspect-ratio:3/4;">
+            <img data-zoom="1" src="./images/projects/wpt-receiver-battery.jpg" alt="Receiver coil, module and battery" style="width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 05</span> &nbsp; Receive side hardware: receive coil, receiver module, and 1100 mAh lithium-ion battery.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 MECHANICAL -->
+  <section id="mechanical" data-screen-label="WPT · Mechanical" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">04&nbsp;&nbsp;Mechanical Integration</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:24ch;">A dock the wearable drops into, charging through plastic.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:0;">
+        <p style="margin:0 0 18px;">A dedicated charging dock was 3D-printed to house the transmit coil, the USB-B inlet, and the alignment magnets, forming a cradle the wearable seats into. On the device side, the receive coil and its mating magnet are integrated into the enclosure so charging occurs through the plastic, with no electrical contacts exposed.</p>
+        <p style="margin:0;">This contactless approach keeps the worn device sealed (there is no open connector to admit moisture or wear) while the magnets make alignment repeatable rather than dependent on careful hand placement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 TESTING -->
+  <section id="testing" data-screen-label="WPT · Testing" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">05&nbsp;&nbsp;Testing &amp; Validation</div>
+      <h2 data-reveal="1" style="font-weight:600;font-size:clamp(28px,3.6vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0 0 28px;max-width:22ch;">Power delivery confirmed at the cell.</h2>
+      <div data-reveal="1" style="max-width:720px;font-size:17px;line-height:1.72;color:#3C3F46;margin-bottom:46px;">
+        <p style="margin:0 0 18px;">Power transfer was validated on the bench with a digital multimeter. At the receiver output, the system delivered a measured <strong style="font-weight:600;color:#15171B;">5.07 V</strong> at a <strong style="font-weight:600;color:#15171B;">0.487 A</strong> charging current into the battery, approximately <strong style="font-weight:600;color:#15171B;">2.47 W</strong> of delivered power. These measurements confirmed successful end-to-end wireless power transfer and active charging of the 1100 mAh cell.</p>
+        <p style="margin:0;font-size:15px;color:#62656D;">These figures represent measured delivered power at the receiver. Transfer efficiency, operating frequency, coil spacing, and full charge time were not characterized in this build and are identified as the next steps for formal power-electronics characterization.</p>
+      </div>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;">
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;">
+            <img data-zoom="1" src="./images/projects/wpt-meter-voltage.jpg" alt="Multimeter showing 5.07 V" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 06</span> &nbsp; Output voltage: 5.07 V at the receiver.</figcaption>
+        </figure>
+        <figure style="margin:0;">
+          <div style="border:1px solid #DEDCD3;background:#fff;overflow:hidden;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;">
+            <img data-zoom="1" src="./images/projects/wpt-meter-current.jpg" alt="Multimeter showing 0.487 A" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <figcaption style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A8D94;margin-top:11px;"><span style="color:oklch(0.56 0.14 252);">Fig. 07</span> &nbsp; Charging current: 0.487 A into the cell.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 CHALLENGES -->
+  <section id="challenges" data-screen-label="WPT · Challenges" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:24px;">06&nbsp;&nbsp;Engineering Challenges &amp; Tradeoffs</div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:38px;max-width:1000px;">
+        <div>
+          <h3 style="font-weight:600;font-size:20px;letter-spacing:-0.01em;margin:0 0 12px;">Alignment &amp; air gap</h3>
+          <p style="margin:0;font-size:16px;line-height:1.66;color:#3C3F46;">Inductive transfer through an enclosure is sensitive to coil alignment and separation; small offsets reduce coupling and delivered power. Magnet-based registration was introduced to make alignment repeatable rather than relying on hand placement.</p>
+        </div>
+        <div>
+          <h3 style="font-weight:600;font-size:20px;letter-spacing:-0.01em;margin:0 0 12px;">Hand-wound coil variation</h3>
+          <p style="margin:0;font-size:16px;line-height:1.66;color:#3C3F46;">Hand-wound coils introduce variation in inductance and series resistance, trading manufacturing precision for rapid prototyping. The design accepts that variability to iterate quickly toward a working link.</p>
+        </div>
+        <div>
+          <h3 style="font-weight:600;font-size:20px;letter-spacing:-0.01em;margin:0 0 12px;">Sealed vs. delivered power</h3>
+          <p style="margin:0;font-size:16px;line-height:1.66;color:#3C3F46;">Charging through plastic with no contacts keeps the wearable sealed, but adds an air gap that costs coupling. The result balances delivered power against a contactless interface that needs no exposed connector.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEC TABLE -->
+  <section data-screen-label="WPT · Specs" style="border-top:1px solid #DEDCD3;padding:84px 0;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div data-reveal="1" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:30px;">Subsystem specification</div>
+      <div data-reveal="1" style="border-top:1px solid #15171B;">
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 210px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Topology</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;">Inductive coil-to-coil power transfer</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 210px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Source</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;">Mains AC → 5 V DC adapter, USB-B feed</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 210px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Coils</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;">Hand-wound copper: transmit + receive</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 210px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Alignment</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;">Permanent-magnet registration</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 210px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Output (measured)</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;">5.07 V at the receiver</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 210px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Charge current (measured)</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;">0.487 A into the cell (≈2.47 W)</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 210px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Battery</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;">1100 mAh lithium-ion</div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;padding:16px 4px;border-bottom:1px solid #DEDCD3;"><div style="flex:0 0 210px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8D94;text-transform:uppercase;padding-top:2px;">Dock</div><div style="flex:1 1 280px;font-size:15px;color:#15171B;">3D-printed cradle with USB-B inlet</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / NEXT -->
+  <footer data-screen-label="WPT · Footer" style="border-top:1px solid #DEDCD3;background:#F4F3EF;padding:74px 0 60px;">
+    <div style="max-width:1180px;margin:0 auto;padding:0 40px;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:oklch(0.56 0.14 252);margin-bottom:26px;">Next project</div>
+      <a href="Semiconductor-Fabrication.dc.html" style="text-decoration:none;display:block;border-top:1px solid #DEDCD3;padding:30px 0;">
+        <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;">
+          <div style="font-weight:700;font-size:clamp(30px,5vw,52px);letter-spacing:-0.03em;color:#15171B;">Semiconductor Fabrication →</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:oklch(0.56 0.14 252);">PROJECT 03</div>
+        </div>
+        <div style="font-size:15px;color:#3C3F46;margin-top:10px;max-width:560px;">Cleanroom microfabrication: photolithography, thin-film Ti/Au, and wet-etch pattern transfer on silicon.</div>
+      </a>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;margin-top:48px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#62656D;">
+        <div>Renad Alanazi, Electrical Engineer</div>
+        <a href="Portfolio.dc.html" style="text-decoration:none;color:#62656D;">← Back to portfolio index</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div data-lightbox="1" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(15,16,18,.92);align-items:center;justify-content:center;padding:5vw;cursor:zoom-out;">
+    <img alt="" style="max-width:100%;max-height:90vh;object-fit:contain;border:1px solid rgba(255,255,255,.2);">
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){
+    const q = (s)=>Array.from(document.querySelectorAll(s));
+    const bar = document.querySelector('[data-progress]');
+    const onScroll = ()=>{
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const p = max>0 ? h.scrollTop/max : 0;
+      if(bar) bar.style.width = (p*100).toFixed(2)+'%';
+    };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    const items = q('[data-reveal]');
+    const vh = window.innerHeight || 800;
+    items.forEach(el=>{
+      if(el.getBoundingClientRect().top < vh*0.92){ el.style.opacity='1'; return; }
+      el.style.opacity='0';
+      el.style.transform='translateY(16px)';
+      el.style.transition='opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+    });
+    const reveal = (el)=>{ el.style.opacity='1'; el.style.transform='none'; };
+    const hidden = items.filter(el=>el.style.opacity==='0');
+    if('IntersectionObserver' in window){
+      const io = new IntersectionObserver((es)=>{
+        es.forEach(e=>{ if(e.isIntersecting){ reveal(e.target); io.unobserve(e.target);} });
+      },{rootMargin:'0px 0px -8% 0px', threshold:0.06});
+      hidden.forEach(el=>io.observe(el));
+    } else { hidden.forEach(reveal); }
+    setTimeout(()=>items.forEach(reveal), 1600);
+
+    const lb = document.querySelector('[data-lightbox]');
+    const lbimg = lb && lb.querySelector('img');
+    q('[data-zoom]').forEach(img=>{
+      img.style.cursor='zoom-in';
+      img.addEventListener('click', ()=>{ if(lb&&lbimg){ lbimg.src=img.getAttribute('src'); lb.style.display='flex'; } });
+    });
+    if(lb) lb.addEventListener('click', ()=>{ lb.style.display='none'; });
+
+    q('a[data-anchor]').forEach(a=>{
+      a.addEventListener('click',(e)=>{
+        const id = a.getAttribute('href');
+        if(id && id.charAt(0)==='#'){
+          const t = document.querySelector(id);
+          if(t){ e.preventDefault(); window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 72, behavior:'smooth'}); }
+        }
+      });
+    });
+  }
+  renderVals(){ return {}; }
+}
+</script>
+</body>
+</html>
